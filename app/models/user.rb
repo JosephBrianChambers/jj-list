@@ -9,6 +9,17 @@ class User < ActiveRecord::Base
   
   before_validation :assign_session_token
   
+  has_many :post_favoriteings
+  has_many :favorite_posts, :through => :post_favoriteings, :source => :post
+  
+  has_many(
+    :followings,
+    :class_name => "Following",
+    :foreign_key => :follower_id,
+    :primary_key => :id
+  )
+  has_many :followed_users, :through => :followings, :source => :followed
+  
   def self.find_by_credentials(email, password)
     user = User.find_by_email(email)
     if user && user.is_password?(password)
