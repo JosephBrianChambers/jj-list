@@ -1,14 +1,17 @@
 <% Post.all.each do |post| %>
-Title: <%= post.title %><br>
-location: <%= post.location %><br>
-price: <%= post.price %><br>
-Description: <%= post.body %><br>
+  Title: <%= post.title %><br>
+  location: <%= post.location %><br>
+  price: <%= post.price %><br>
+  Description: <%= post.body %><br>
+  <% post.photos.each do |photo| %>
+    <%= image_tag photo.image.url(:medium) %>
+  <% end %>
 
-<form action="<%= post_url(post)  %>" method="post" accept-charset="utf-8">
-  <input type="hidden" name="authenticity_token" value="<%=form_authenticity_token%>">
-  <input type="hidden" name="_method" value="delete">
+  <form action="<%= post_url(post)  %>" method="post" accept-charset="utf-8">
+    <input type="hidden" name="authenticity_token" value="<%=form_authenticity_token%>">
+    <input type="hidden" name="_method" value="delete">
 
-  <p><input type="submit" value="Delete post"></p>
-</form><br><br>
+    <p><input type="submit" value="Delete post"></p>
+  </form><br><br>
 
 <% end %>

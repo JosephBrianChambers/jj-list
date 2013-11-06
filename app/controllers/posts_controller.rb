@@ -6,6 +6,10 @@ class PostsController < ApplicationController
   def create
     @post = Post.new(params[:post])
     @post.user_id = current_user.id
+    params[:photos].each do |image|
+      @post.photos.build({image: image})
+    end
+      
     if @post.save
       redirect_to posts_url
     else

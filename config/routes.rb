@@ -4,4 +4,6 @@ JjList::Application.routes.draw do
   resources :users, :only => [:create, :new]
   resources :posts, :only => [:create, :destroy, :index, :new]
   resource :session, :only => [:create, :destroy]
+  
+  
 end
