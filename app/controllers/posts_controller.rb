@@ -21,10 +21,8 @@ class PostsController < ApplicationController
   end
   
   def index
-    #render :index
     @posts = Post.search(params[:q]) # #search method provided by texttacular
-    #render :json => Post.search(@search_query), :include => :photos
-    render "posts/index"
+    render "posts/index.json"
     
   end
   

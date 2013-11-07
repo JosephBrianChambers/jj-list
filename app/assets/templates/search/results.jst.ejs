@@ -5,8 +5,8 @@
     <div class='price-preview post-preview-single'> - $<%= post.escape("price") %></div>
     <div class='location-preview post-preview-single'> (<%= post.escape("location") %>)</div>
     <div class='images-preview post-preview-single'>
-      <% post.photos.forEach(function (photo) { %>
-        <%= photo %>
+      <% post.get("imageUrls").forEach(function (url) { %>
+        <img src="<%= url %>" alt="An awesome image" />
       <% }) %>
     </div>
   </div>
