@@ -5,9 +5,11 @@ window.JjList = {
   Routers: {},
   initialize: function() {
     JjList.postsRouter = new JjList.Routers.PostsRouter({
+      
       "$rootEl": $('#content')
     });
     Backbone.history.start();
+    
   }
 };
 

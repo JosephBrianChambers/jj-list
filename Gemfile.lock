@@ -146,6 +146,7 @@ DEPENDENCIES
   bcrypt-ruby
   coffee-rails (~> 3.2.1)
   debugger
+  ejs
   figaro
   jquery-rails
   paperclip

@@ -6,8 +6,6 @@ class UsersController < ApplicationController
   
   def create
     @user = User.new(params[:user])
-    p @user
-    p params
     if @user.save
       session[:session_token] = @user.reset_session_token!
       redirect_to root_url

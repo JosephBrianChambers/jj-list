@@ -13,7 +13,7 @@ class SessionsController < ApplicationController
       session[:session_token] = @user.reset_session_token!
       redirect_to root_url
     else
-      redirect_to posts_url
+      redirect_to welcome_url
       #render :new
     end
   end

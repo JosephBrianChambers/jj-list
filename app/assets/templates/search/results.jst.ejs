@@ -1,1 +1,14 @@
-Here is my reslults!!!!!!!!!!!!!!!!!!!!
+<% results.forEach(function (post) { %>
+  <div class='post-preview'>
+    <div class='heart-link post-preview-single'>link</div>
+    <div class='title-preview post-preview-single'><%= post.escape("title") %> </div>
+    <div class='price-preview post-preview-single'> - $<%= post.escape("price") %></div>
+    <div class='location-preview post-preview-single'> (<%= post.escape("location") %>)</div
+  </div>
+
+  <br><br>
+<% }) %>
+
+.post-detail {
+  display: inline-block;
+}

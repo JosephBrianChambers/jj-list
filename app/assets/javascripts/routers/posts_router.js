@@ -8,8 +8,7 @@ JjList.Routers.PostsRouter = Backbone.Router.extend({
   },
   
   searchIndex: function () {
-    var that = this;
-    var parentSearchView = new JjList.Views.ParentSearchView;
-    that.$rootEl.html(parentSearchView.render().$el)
-  };
+    var parentSearchView = new JjList.Views.ParentSearchView();
+    this.$rootEl.html(parentSearchView.render().$el)
+  },
 })

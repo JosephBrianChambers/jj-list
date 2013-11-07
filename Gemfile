@@ -27,6 +27,7 @@ gem 'aws-sdk'
 gem 'figaro'
 gem 'backbone-on-rails'
 gem 'textacular', '~>3.0'
+gem 'ejs'
 group :development do
   gem 'debugger'
 end 
