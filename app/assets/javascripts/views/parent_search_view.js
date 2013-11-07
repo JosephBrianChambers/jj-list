@@ -33,7 +33,8 @@ JjList.Views.ParentSearchView = Backbone.View.extend({
       data: formData,
       
       success: function (collection, response, options) {
-        that.searchResultsView.render();
+        //that.searchResultsView.render();
+        debugger
       }
     });
     

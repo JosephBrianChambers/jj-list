@@ -82,6 +82,7 @@ GEM
     mime-types (1.25)
     multi_json (1.8.2)
     nokogiri (1.5.10)
+    oj (2.1.7)
     paperclip (3.5.2)
       activemodel (>= 3.0.0)
       activesupport (>= 3.0.0)
@@ -89,6 +90,8 @@ GEM
       mime-types
     pg (0.16.0)
     polyglot (0.3.3)
+    rabl (0.9.0)
+      activesupport (>= 2.3.14)
     rack (1.4.5)
     rack-cache (1.2)
       rack (>= 0.4)
@@ -149,8 +152,10 @@ DEPENDENCIES
   ejs
   figaro
   jquery-rails
+  oj
   paperclip
   pg
+  rabl
   rails (= 3.2.14)
   sass-rails (~> 3.2.3)
   textacular (~> 3.0)

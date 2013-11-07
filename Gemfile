@@ -28,6 +28,8 @@ gem 'figaro'
 gem 'backbone-on-rails'
 gem 'textacular', '~>3.0'
 gem 'ejs'
+gem 'rabl'
+gem 'oj'
 group :development do
   gem 'debugger'
 end 

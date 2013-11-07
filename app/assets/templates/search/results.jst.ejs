@@ -3,7 +3,12 @@
     <div class='heart-link post-preview-single'>link</div>
     <div class='title-preview post-preview-single'><%= post.escape("title") %> </div>
     <div class='price-preview post-preview-single'> - $<%= post.escape("price") %></div>
-    <div class='location-preview post-preview-single'> (<%= post.escape("location") %>)</div
+    <div class='location-preview post-preview-single'> (<%= post.escape("location") %>)</div>
+    <div class='images-preview post-preview-single'>
+      <% post.photos.forEach(function (photo) { %>
+        <%= photo %>
+      <% }) %>
+    </div>
   </div>
 
   <br><br>
