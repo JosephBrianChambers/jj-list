@@ -6,8 +6,10 @@ class PostsController < ApplicationController
   def create
     @post = Post.new(params[:post])
     @post.user_id = current_user.id
-    params[:photos].each do |image|
-      @post.photos.build({image: image})
+    unless params[:photos].nil?
+      params[:photos].each do |image|
+        @post.photos.build({image: image})
+      end
     end
       
     if @post.save
@@ -19,7 +21,9 @@ class PostsController < ApplicationController
   end
   
   def index
-    render :index
+    #render :index
+    @search_query = params[:q]
+    render :json => Post.search(@search_query)
   end
   
   def destroy

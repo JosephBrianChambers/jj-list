@@ -25,6 +25,8 @@ gem 'bcrypt-ruby', :require => 'bcrypt'
 gem 'paperclip'
 gem 'aws-sdk'
 gem 'figaro'
+gem 'backbone-on-rails'
+gem 'textacular', '~>3.0'
 group :development do
   gem 'debugger'
 end 
