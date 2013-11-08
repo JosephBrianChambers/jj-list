@@ -1,8 +1,12 @@
 This is the new user sign up page
 
 <form action="<%= users_url %>" method="post" accept-charset="utf-8">
-  
   <input type="hidden" name="authenticity_token" value="<%=form_authenticity_token%>">
+  
+  <label for="username">Username</label>
+  <input type="text" name="user[username]" id="username">
+  
+  
   <label for="email">Email:</label>
   <input type="text" name="user[email]" value="<%= @user.email %>" id="email">
   
