@@ -13,7 +13,7 @@ class PostsController < ApplicationController
     end
       
     if @post.save
-      redirect_to posts_url
+      render :json => @post, :status => 200
     else
       flash.now[:notice]  = @post.errors.full_messages
       render :new
@@ -21,9 +21,35 @@ class PostsController < ApplicationController
   end
   
   def index
-    @posts = Post.search(params[:q]) # #search method provided by texttacular
-    render "posts/index.json"
+    q    = params[:search][:q]
+    min  = params[:search][:min].empty? ? 0      : params[:search][:min].to_i
+    max  = params[:search][:max].empty? ? 999999 : params[:search][:max].to_i
+    pic  = params[:search][:pic].nil?   ? false  : true
+    days = params[:search][:days].to_i
+    now  = Time.now
     
+    p q
+    p min
+    p max
+    p pic
+    p days
+    p now
+    
+     # #search method provided by texttacular
+    if pic
+      @posts = Post
+        .joins(:photos).select('distinct posts.*')
+        .where(price: min..max)
+        .where(created_at: now-days.days..now)
+        .search(q)
+    else
+      @posts = Post.includes(:photos)
+        .where(price: min..max)
+        .where(created_at: now-days.days..now)
+        .search(q)
+    end
+      
+    render "posts/index.json"
   end
   
   def destroy

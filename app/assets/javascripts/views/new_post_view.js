@@ -26,7 +26,12 @@ JjList.Views.NewPostView = Backbone.View.extend({
       type: "POST",
       data: formData,
       success: function(response, status, jqXHR) {
-        alert('must redirect!')
+        //flash message on screen
+        JjList.postsRouter.navigate("posts/myPosts", {trigger: true});
+      },
+      
+      error: function( response, status, jqxHR) {
+        //flash message on screen
       }
     });
   },
