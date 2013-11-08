@@ -1,1 +1,25 @@
 !!!!! make a new post heree dude 
+
+<form id="new-post" enctype="multipart/form-data">
+  
+  <label for="price">Price</label>
+  <input type="text" name="post[price]" id="price">
+  
+  <label for="title">Title</label>
+  <input type="text" name="post[title]" id="title">
+  
+  <label for="post-body">Description</label>
+  <textarea form="new-post" name="post[body]" id="post-body"></textarea>
+  
+  <label for="location">Location</label>
+  <input type="text" name="post[location]" id="location">
+  
+  <label for="uploadimage">UploadImage</label> 
+  <input type="file" 
+         name="photos[]" 
+         id="uploadimage"
+         multiple>
+  
+  
+  <input type="submit" value="create post!">
+</form>

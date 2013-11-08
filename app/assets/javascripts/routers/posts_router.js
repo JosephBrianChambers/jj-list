@@ -14,7 +14,7 @@ JjList.Routers.PostsRouter = Backbone.Router.extend({
   },
   
   createPost: function () {
-    var newPostView = new JjList.Views.NewPostView();
+    var newPostView = new JjList.Views.NewPostView({});
     this.$rootEl.html(newPostView.render().$el);
   }
 })
