@@ -1,0 +1,10 @@
+<div id="hud">
+  this is the hud for users, should list
+  links and stuff. use with bootstrap
+</div>
+
+<% users.forEach(function (user) { %>
+  <%= user.escape("username") %>
+  <br>
+<% }) %>
+  

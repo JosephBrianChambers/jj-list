@@ -20,14 +20,13 @@ JjList.Views.NewPostView = Backbone.View.extend({
     event.preventDefault();
     var formData = $(event.target).serializeJSON()
     formData.photos = this.photoFiles
-    debugger
+
     $.ajax({
       url: "posts",
       type: "POST",
       data: formData,
       success: function(response, status, jqXHR) {
         //flash message on screen
-        debugger
         Backbone.history.navigate("#posts/myPosts", {trigger: true});
       },
       

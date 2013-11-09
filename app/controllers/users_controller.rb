@@ -16,6 +16,8 @@ class UsersController < ApplicationController
   end
   
   def index
-    render :json => current_user.followed_users.pluck(:username)
+    p current_user
+    p " dog dog dog dog dog dog dog dog dog dog dog dog dog dog dog dog dog dog dog "
+    render :json => current_user.followed_users, :only => [:id, :username]
   end
 end
