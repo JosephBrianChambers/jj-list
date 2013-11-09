@@ -1,0 +1,15 @@
+<% results.forEach(function (post) { %>
+  <div class='post-preview'>
+    <div class='heart-link post-preview-single'>link</div>
+    <div class='title-preview post-preview-single'><%= post.escape("title") %> </div>
+    <div class='price-preview post-preview-single'> - $<%= post.escape("price") %></div>
+    <div class='location-preview post-preview-single'> (<%= post.escape("location") %>)</div>
+    <div class='images-preview post-preview-single'>
+      <% post.get("imageUrls").forEach(function (url) { %>
+        <img src="<%= url %>" alt="An awesome image" />
+      <% }) %>
+    </div>
+  </div>
+
+  <br><br>
+<% }) %>

@@ -14,4 +14,8 @@ class UsersController < ApplicationController
       render :new      
     end
   end
+  
+  def index
+    render :json => current_user.followed_users.pluck(:username)
+  end
 end

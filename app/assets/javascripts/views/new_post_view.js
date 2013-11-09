@@ -27,7 +27,8 @@ JjList.Views.NewPostView = Backbone.View.extend({
       data: formData,
       success: function(response, status, jqXHR) {
         //flash message on screen
-        JjList.postsRouter.navigate("posts/myPosts", {trigger: true});
+        debugger
+        Backbone.history.navigate("#posts/myPosts", {trigger: true});
       },
       
       error: function( response, status, jqxHR) {
@@ -49,7 +50,7 @@ JjList.Views.NewPostView = Backbone.View.extend({
       //callback for successful file read
       fileReader.onloadend = function () {
         convertedFiles.push(fileReader.result)
-        //logic to read another file or invoke callback
+        //logic to read another file or invoke passed callback
         if (idx < files.length-1) {
           helper(++idx, callback);
         } else {

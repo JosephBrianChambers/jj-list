@@ -1,4 +1,11 @@
 <h3>this is my root page with content div</h3>
 <div id="content"></div>
 
+<script type="application/javascript"> 
+JjList.currentUser = new JjList.Models.User({
+  id: <%= current_user.id %>,
+  username: "<%= current_user.username %>"
+})
+</script
+
 

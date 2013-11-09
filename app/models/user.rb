@@ -10,9 +10,9 @@ class User < ActiveRecord::Base
   
   before_validation :assign_session_token
   
+  has_many :posts
   has_many :post_favoriteings
-  has_many :favorite_posts, :through => :post_favoriteings, :source => :post
-  
+  has_many :favorite_posts, :through => :post_favoriteings, :source => :post 
   has_many(
     :followings,
     :class_name => "Following",

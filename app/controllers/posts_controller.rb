@@ -20,36 +20,35 @@ class PostsController < ApplicationController
     end
   end
   
-  def index
-    q    = params[:search][:q]
-    min  = params[:search][:min].empty? ? 0      : params[:search][:min].to_i
-    max  = params[:search][:max].empty? ? 999999 : params[:search][:max].to_i
-    pic  = params[:search][:pic].nil?   ? false  : true
-    days = params[:search][:days].to_i
-    now  = Time.now
+  def index  
     
-    p q
-    p min
-    p max
-    p pic
-    p days
-    p now
-    
-     # #search method provided by texttacular
-    if pic
-      @posts = Post
-        .joins(:photos).select('distinct posts.*')
-        .where(price: min..max)
-        .where(created_at: now-days.days..now)
-        .search(q)
-    else
-      @posts = Post.includes(:photos)
-        .where(price: min..max)
-        .where(created_at: now-days.days..now)
-        .search(q)
-    end
+    if params[:user_id]
+      user = User.find(params[:user_id])
+      @posts = user.posts
+      render "posts/index.json"
+    else  
+      q    = params[:search][:q]
+      min  = params[:search][:min].empty? ? 0      : params[:search][:min].to_i
+      max  = params[:search][:max].empty? ? 999999 : params[:search][:max].to_i
+      pic  = params[:search][:pic].nil?   ? false  : true
+      days = params[:search][:days].to_i
+      now  = Time.now
+      #does search want a picture?
+      if pic
+        @posts = Post
+          .joins(:photos).select('distinct posts.*')
+          .where(price: min..max)
+          .where(created_at: now-days.days..now)
+          .search(q)
+      else
+        @posts = Post.includes(:photos)
+          .where(price: min..max)
+          .where(created_at: now-days.days..now)
+          .search(q)
+      end
       
-    render "posts/index.json"
+      render "posts/index.json"
+    end
   end
   
   def destroy

@@ -7,7 +7,8 @@ JjList.Views.SearchResultsView = Backbone.View.extend({
   
   render: function () {
     var renderedContent = this.template({
-      results: this.collection
+      results: this.collection,
+      title: "Search Results"
     });
     this.$el.html(renderedContent);
     return this;
