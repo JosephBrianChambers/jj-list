@@ -3,19 +3,27 @@
 
     <div id="search-box">
       <form id="search-form" class="form-search">
-        <div id="search-field" class"text-center">
+        <div id="search-field" class"text-center search-style">
           <input type="text" name="search[q]" id="q">
-          <input type="submit" value="Search" class="btn btn-primary">
+          
+          <input type="submit" value="Search" class="btn btn-primary btn-large" id="search-btn">
         </div>
-        <div id="filters">
-          <label for="price_min">Price</label>
-          <input type="text" name="search[min]" placeholder="min" id="price_min">
-          <input type="text" name="search[max]" placeholder="max" id="price_max">
+        <div id="filters" class="search-style">
+         
+          <label for="price_min">price</label>
+          <input type="text" name="search[min]" placeholder="min" id="price_min" class="price">
+          <input type="text" name="search[max]" placeholder="max" id="price_max" class="price">
+          
+          <span class="bar">|</span>
+          
+          <label>
+            <input type="checkbox" name="search[pic]" value="true" id="pic-input">
+            <span class="haspic">pic</span>
+          </label>
+          
+          <span class="bar">|</span>
       
-          <label for="has_picture">picture</label>
-          <input type="checkbox" name="search[pic]" value="true" id="has_picture">
-      
-          <label for="days">only display listings </label>
+          <label for="days">only listings </label>
             <!-- dropdown -->
             <select name="search[days]" id="days">
               <option value="1" selected="1">1 day old</option>

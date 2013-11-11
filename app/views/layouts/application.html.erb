@@ -12,12 +12,13 @@
         
       <div id="header" class="row">
         <div class="col-md-12">
-          <% if logged_in? %>
-            <%= render partial: "layouts/logout", locals: {}%>
-          <% else %>
-            <%= render partial: "layouts/login", locals: {} %>
-          <% end %> 
-          
+          <div class="navbar navbar-fixed-top" id="header-nav">
+            <% if logged_in? %>
+              <%= render partial: "layouts/logout", locals: {}%>
+            <% else %>
+              <%= render partial: "layouts/login", locals: {} %>
+            <% end %> 
+          </div>
         </div>
       </div>
   
@@ -30,8 +31,10 @@
     
       <div id="footer" class="row">
         <div class="col-md-12">
-          place ABOUT link        footer!!!!<br>   
-          place CARRERS link 
+          <div id="footer-nav" class="navbar navbar-fixed-bottom">
+            place ABOUT link        footer!!!!<br>   
+            place CARRERS link 
+          </div>
         </div>
       </div>
       

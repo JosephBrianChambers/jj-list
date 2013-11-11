@@ -33,9 +33,9 @@ JjList.Views.SearchResultsView = Backbone.View.extend({
         //make sure to pick out post from resoponse array
         var post = new JjList.Models.Post(data[0])
         var postView = new JjList.Views.PostView({
-          model: post
-          debugger
+          model: post,
         })
+        debugger
       },
       
       error: function (resp) {

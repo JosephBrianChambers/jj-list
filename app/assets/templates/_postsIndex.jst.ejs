@@ -1,14 +1,21 @@
 <% results.forEach(function (post) { %>
   <div class='hit' data-id="<%= post.id %>">
-    <div class='heart-link post-preview-single'>link</div>
-    <div class='title-preview post-preview-single'><%= post.escape("title") %> </div>
-    <div class='price-preview post-preview-single'> - $<%= post.escape("price") %></div>
-    <div class='location-preview post-preview-single'> (<%= post.escape("location") %>)</div>
-    <div class='images-preview post-preview-single'>
-      <% post.get("imageUrls").forEach(function (url) { %>
-        *pic*
-        <img src="<%= url %>" alt="An awesome image" />
-      <% }) %>
+    <div class='image-preview post-preview-single'>
+      <img src="<%= post.get("imageUrls")[0] %>">
+    </div>
+    <div class="preview">
+      <div class="inline-blk">
+        <span class='post-created-at'><%= post.escape("created_at")%></span>
+
+        <span class='heart-link post-preview-single'>link</span>
+
+        <span class='title-preview post-preview-single'><%= post.escape("title") %> </span>
+      </div>
+      <div class="inline-blk">
+        <span class='price-preview post-preview-single'>$<%= post.escape("price") %></span>
+
+        <span class='location-preview post-preview-single'> (<%= post.escape("location") %>)</span>
+      </div>
     </div>
   </div>
 
