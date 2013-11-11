@@ -14,5 +14,5 @@ window.JjList = {
 };
 
 $(document).ready(function(){
-  JjList.initialize();
+  //JjList.initialize();
 });

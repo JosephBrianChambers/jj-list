@@ -7,7 +7,7 @@ JjList::Application.routes.draw do
       resources :posts, :only => [:index] 
     end
   end
-  resources :posts, :only => [:create, :destroy, :index, :new]
+  resources :posts, :only => [:create, :destroy, :index, :new, :show]
   resource :session, :only => [:create, :destroy]
   
   

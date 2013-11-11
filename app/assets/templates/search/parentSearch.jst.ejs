@@ -1,27 +1,32 @@
-<div id="search-box">
-  <form id="search-form" class="form-search">
-    <div id="search-field">
-      <input type="text" name="search[q]" id="q">
-      <input type="submit" value="Search" class="btn btn-primary">
-    </div>
-    <div id="filters">
-      <label for="price_min">Price</label>
-      <input type="text" name="search[min]" placeholder="min" id="price_min">
-      <input type="text" name="search[max]" placeholder="max" id="price_max">
-      
-      <label for="has_picture">picture</label>
-      <input type="checkbox" name="search[pic]" value="true" id="has_picture">
-      
-      <label for="days">only display listings </label>
-        <!-- dropdown -->
-        <select name="search[days]" id="days">
-          <option value="1" selected="1">1 day old</option>
-          <option value="2">2 days old</option>
-          <option value="3">3 days old</option>
-          <option value="4">4 days old</option>
-          <option value="5">5 days old</option>
-        </select>
-    </div>
-  </form>
-</div>
+<div class="row">
+  <div class="col-md-9">
 
+    <div id="search-box">
+      <form id="search-form" class="form-search">
+        <div id="search-field" class"text-center">
+          <input type="text" name="search[q]" id="q">
+          <input type="submit" value="Search" class="btn btn-primary">
+        </div>
+        <div id="filters">
+          <label for="price_min">Price</label>
+          <input type="text" name="search[min]" placeholder="min" id="price_min">
+          <input type="text" name="search[max]" placeholder="max" id="price_max">
+      
+          <label for="has_picture">picture</label>
+          <input type="checkbox" name="search[pic]" value="true" id="has_picture">
+      
+          <label for="days">only display listings </label>
+            <!-- dropdown -->
+            <select name="search[days]" id="days">
+              <option value="1" selected="1">1 day old</option>
+              <option value="2">2 days old</option>
+              <option value="3">3 days old</option>
+              <option value="4">4 days old</option>
+              <option value="5">5 days old</option>
+            </select>
+        </div>
+      </form>
+    </div>
+
+  </div>
+</div>

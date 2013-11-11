@@ -17,6 +17,7 @@
 //= require backbone
 //= require bootstrap
 //= require jj_list
+//= require jquery.zaccordion
 //= require_tree ../templates
 //= require_tree ./models
 //= require_tree ./collections

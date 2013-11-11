@@ -2,21 +2,9 @@ JjList.Routers.PostsRouter = Backbone.Router.extend({
   initialize: function (options) {
     this.$rootEl = options.$rootEl;
     this.$sidebar = options.$sidebar;
-    var that = this;
     
-    var favoriteUsers = new JjList.Collections.FavoriteUsers({
-      model: JjList.Models.User
-    });
-    
-    var sidebarView = new JjList.Views.SidebarView({
-      collection: favoriteUsers
-    });
-    
-    favoriteUsers.fetch({
-      success: function(collection, response, options) {
-        that.$sidebar.html(sidebarView.render().$el);
-      },
-    });
+    var sidebarView = new JjList.Views.SidebarView();
+    this.$sidebar.html(sidebarView.render().$el);
   },
   
   routes: {

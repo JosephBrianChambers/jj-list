@@ -4,6 +4,7 @@ class PostsController < ApplicationController
   end
   
   def create
+    #find post and build associated photos
     @post = Post.new(params[:post])
     @post.user_id = current_user.id
     unless params[:photos].nil?
@@ -16,11 +17,12 @@ class PostsController < ApplicationController
       render :json => @post, :status => 200
     else
       flash.now[:notice]  = @post.errors.full_messages
-      render :new
+      render @post.errors.full_messages
     end
   end
   
   def index
+    #search params
     q    = params[:search][:q]
     min  = params[:search][:min].empty? ? 0      : params[:search][:min].to_i
     max  = params[:search][:max].empty? ? 999999 : params[:search][:max].to_i
@@ -41,6 +43,12 @@ class PostsController < ApplicationController
         .search(q)
     end
     
+    render "posts/index.json"
+  end
+  
+  def show
+    #using @posts(plurl) to utilize RABL template
+    @posts = Post.includes(:photos).find(params[:id])
     render "posts/index.json"
   end
   

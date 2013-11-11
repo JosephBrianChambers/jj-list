@@ -5,12 +5,26 @@
 </div>
 
 <script type="application/javascript"> 
+  // bootstrap currentUser 
   JjList.currentUser = new JjList.Models.User({
     id: <%= current_user.id %>,
     username: "<%= current_user.username %>",
-    favoriteUsers: new JjList.Collections.FavoriteUsers
-    favoritePosts: new 
-  })
+    favoriteUsers: new JjList.Collections.FavoriteUsers({
+      model: JjList.Models.User
+    }),
+    favoritePosts: new JjList.Collections.FavoritePosts()
+  });
+  
+  //bootstrap currentUser favorite posts and users
+  JjList.currentUser.attributes.favoriteUsers.fetch({
+    success:function (collection, response, options) {
+      JjList.currentUser.attributes.favoritePosts.fetch({
+        success: function (colleciton, response, options) {
+          JjList.initialize();
+        }
+      })
+    }
+  })  
 </script>
 
 

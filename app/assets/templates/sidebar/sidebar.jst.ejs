@@ -1,10 +1,57 @@
-<div id="hud">
-  this is the hud for users, should list
-  links and stuff. use with bootstrap
+
+
+<div class="favorite-users">
+  FAVORITES USERS
+  <ul>
+    <% users.forEach(function (user) { %>
+      <li>
+        <a href=""><%= user.escape("username") %></a>
+        <br>
+      </li>
+    <% }) %>
+  </ul>
+</div>
+  
+  
+<div class="favorite-posts">
+  FAVORITE POSTS
+  <ul>
+    <% posts.forEach(function (post) { %>
+      <li>
+        <a href""><%= post.escape("title") %></a>
+        <br>
+      </li>
+    <% }) %>
+  </ul>
 </div>
 
-<% users.forEach(function (user) { %>
-  <%= user.escape("username") %>
-  <br>
-<% }) %>
+
+
+
+
+<ul id="featured">
+  <li class="favorite-users">
+  	<ul>
   
+          <% users.forEach(function (user) { %>
+            <li>
+              <a href=""><%= user.escape("username") %></a>
+              <br>
+            </li>
+          <% }) %>
+      
+  	</ul>
+  </li>
+  <li class="favorite-posts">
+  	<ul>
+    
+          <% posts.forEach(function (post) { %>
+            <li>
+              <a href""><%= post.escape("title") %></a>
+              <br>
+            </li>
+          <% }) %>
+     
+  	</ul>
+  </li>
+</ul>

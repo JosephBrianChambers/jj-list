@@ -1,4 +1,6 @@
 JjList.Views.ParentSearchView = Backbone.View.extend({
+ 
+  
   initialize: function () {
     //instanciate new child search view(search box)
     //and insert its rendered el into my el
