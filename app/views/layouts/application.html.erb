@@ -7,19 +7,34 @@
   <%= csrf_meta_tags %>
   
 </head>
-<body>
-  <div id="header">
-    <div id="login-form">
-      <% if logged_in? %>
-        <%= render partial: "layouts/logout", locals: {}%>
-      <% else %>
-        <%= render partial: "layouts/login", locals: {} %>
-      <% end %>
-    <div>
-  </div>
+  <body>
+    <div class="container">
+        
+      <div id="header" class="row">
+        <div class="col-md-12">
+          <% if logged_in? %>
+            <%= render partial: "layouts/logout", locals: {}%>
+          <% else %>
+            <%= render partial: "layouts/login", locals: {} %>
+          <% end %> 
+          
+        </div>
+      </div>
   
-  <%= flash[:notice] if flash[:notice] %>
-<%= yield %>
-
-</body>
+      <div id="middle" class="row">
+        <div class="col-md-12">
+          <%= flash[:notice] if flash[:notice] %>
+          <%= yield %>  
+        </div>
+      </div>
+    
+      <div id="footer" class="row">
+        <div class="col-md-12">
+          place ABOUT link        footer!!!!<br>   
+          place CARRERS link 
+        </div>
+      </div>
+      
+    </div>
+  </body>
 </html>
