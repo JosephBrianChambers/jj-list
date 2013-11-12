@@ -1,4 +1,6 @@
 JjList.Views.SidebarView = Backbone.View.extend({
+  className: "bs-sidebar hidden-print affix",
+  
   initialize: function () {
     //placeholder
   }, 
@@ -17,7 +19,7 @@ JjList.Views.SidebarView = Backbone.View.extend({
   },
   
   events: {
-    "click #featured": "zAccordion"
+    
   },
   
   zAccordion: function () {

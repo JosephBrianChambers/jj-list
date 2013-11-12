@@ -87,14 +87,20 @@
  
  .star {
    color:lightgrey;
-   font-size: 11pt;
+   font-size: 19px;
  }
  
  .stared {
-   font-size: 11pt;
    background: -webkit-linear-gradient(#FFC200, #FFFF00);
    -webkit-background-clip: text;
    -webkit-text-fill-color: transparent;
+ }
+ 
+ .star-preview {
+   background: -webkit-linear-gradient(#FFC200, #FFFF00);
+   -webkit-background-clip: text;
+   -webkit-text-fill-color: transparent;
+   cursor: pointer;
  }
  
  .hit {
@@ -103,10 +109,41 @@
    margin-bottom: 3px;
    border-style: solid;
    border-color: transparent;
-   height: 54px;
+   height: 54px; 
  }
  
  .hit-hover {
    border-color: black;
    border-radius: 10px;
+   cursor: pointer;
+ }
+ 
+ .fake-link {
+     color: blue;
+     text-decoration: underline;
+     cursor: pointer;
+ }
+ 
+ .modal-body {
+   height: 400px;
+   overflow: scroll;
+ }
+ 
+ #carousel {
+   width: 300px;
+   height: 218px;
+   float: right;
+ }
+ 
+ @media (min-width: 992px) {
+   .bs-sidebar.affix {
+     position: fixed;
+     top: 80px;
+   }
+ }
+ 
+ @media (min-width: 992px) {
+   .bs-sidebar.affix, .bs-sidebar.affix-bottom {
+   width: 213px;
+   }
  }

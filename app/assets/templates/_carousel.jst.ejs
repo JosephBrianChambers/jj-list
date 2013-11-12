@@ -1,0 +1,31 @@
+<div id="carousel" class="carousel slide" data-ride="carousel">
+  <!-- Indicators -->
+  <ol class="carousel-indicators">
+    <% var i = 0 %>
+    <% photos.forEach(function (photo) { %>
+      <li data-target="#carousel" data-slide-to="<%= i %>"></li>
+      <% i++ %>
+    <% }) %>
+  </ol>
+
+  <!-- Wrapper for slides -->
+  <div class="carousel-inner">
+    <% var i = 0%>
+    <% photos.forEach(function (photo) { %>
+      <div class="item<% if (i===0) { %> active<% } %>">
+        <img alt="image" src="<%= photo %>" >
+
+      </div>
+      <% i++ %>
+    <%  }) %>
+  </div>
+
+  <!-- Controls -->
+  <a class="left carousel-control" href="#carousel" data-slide="prev">
+    <span class="glyphicon glyphicon-chevron-left"></span>
+  </a>
+  <a class="right carousel-control" href="#carousel" data-slide="next">
+    <span class="glyphicon glyphicon-chevron-right"></span>
+  </a>
+</div>
+

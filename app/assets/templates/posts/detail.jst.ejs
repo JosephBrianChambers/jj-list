@@ -1,0 +1,31 @@
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title" id="myModalLabel">
+          <%= post.escape("title") %> - $<%= post.escape("price")%> (<%= post.escape("location") %>)
+        </h4>
+        <%= post.escape("created_at")%>
+      </div>
+      <div class="modal-body">
+        <% if (post.attributes.imageUrls) {%>
+          <div id="post-pictures">
+            <%= JST["_carousel"]({photos: post.get("mediumImageUrls")})%>
+          </div>
+        <% } %>
+        <p class="post-body">
+          <%= post.escape("body") %> 
+        </p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn">Star Author</button>
+        <button type="button" class="btn">Star post</button>
+        <button type="button" class="btn">Email Author</button>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->

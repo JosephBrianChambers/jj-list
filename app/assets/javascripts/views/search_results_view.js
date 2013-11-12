@@ -16,17 +16,27 @@ JjList.Views.SearchResultsView = Backbone.View.extend({
   },
   
   events: {
-    "mouseenter .hit": "mouseEnter",
-    "mouseleave .hit": "mouseLeave",
+    "mouseenter .hit": "enterHit",
+    "mouseleave .hit": "leaveHit",
+    "mouseenter .star": "enterStar",
+    "mouseleave .star": "leaveStar",
     "click .hit": "detailViaHit"
   },
   
-  mouseEnter: function (event) {
+  enterStar: function (event) {
+    $(event.currentTarget).toggleClass("star-preview")
+  },
+  
+  leaveStar: function (event) {
+    $(event.currentTarget).toggleClass("star-preview")
+  },
+  
+  enterHit: function (event) {
     var $hit = $(event.currentTarget);
     $hit.toggleClass("hit-hover");
   },
   
-  mouseLeave: function (event) {
+  leaveHit: function (event) {
     var $hit = $(event.currentTarget);
     $hit.toggleClass("hit-hover");
   },
@@ -38,21 +48,30 @@ JjList.Views.SearchResultsView = Backbone.View.extend({
   
   detailView: function (postId) {
     //this request for 1 post, but responce is an array
-    $.ajax({
-      url: "posts/" + postId,
-      type: 'GET',
-      success: function (data, status, jqXHR) {
-        //make sure to pick out post from resoponse array
-        var post = new JjList.Models.Post(data[0])
-        var postView = new JjList.Views.PostView({
-          model: post,
-        })
-        debugger
-      },
-      
-      error: function (resp) {
-        debugger
-      },
-    });
+    
+    var test = function (that) {
+      $.ajax({
+        url: "posts/" + postId,
+        type: 'GET',
+        success: function (data, status, jqXHR) { 
+          var postView = new JjList.Views.PostView({
+            model: new JjList.Models.Post(data[0])
+          });
+         
+          that.$el.append("<div id='modal-view'></div>");
+          var $modal = that.$el.find('#modal-view')
+          $modal.html(postView.render().$el)
+          $('#myModal').modal('toggle')
+        }
+      });  
+    };
+    //nessary to pass variable's to ajax success callback
+    test(this);
   },
 })
+
+
+// var post = new JjList.Models.Post(data[0])
+// var postView = new JjList.Views.PostView({
+//   model: post,
+// })
