@@ -3,7 +3,5 @@ JjList.Collections.FavoritePosts = Backbone.Collection.extend({
     //placeholder
   },
   model: JjList.Models.Post,
-  url: function () {
-    return "users/" + JjList.currentUser.id + "/favorite_posts"
-  }
+  url: "post_favoriteings"
 })

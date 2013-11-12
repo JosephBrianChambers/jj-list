@@ -4,5 +4,6 @@ class Post < ActiveRecord::Base
   validates :body, :location, :price, :title, :user_id, :presence => true
   
   has_many :photos, :inverse_of => :post, :dependent => :destroy
+  has_many :post_favoriteings, :dependent => :destroy
 
 end

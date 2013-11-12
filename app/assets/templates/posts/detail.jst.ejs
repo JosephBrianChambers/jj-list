@@ -11,7 +11,7 @@
         <%= post.escape("created_at")%>
       </div>
       <div class="modal-body">
-        <% if (post.attributes.imageUrls) {%>
+        <% if (post.attributes.imageUrls.length !== 0) {%>
           <div id="post-pictures">
             <%= JST["_carousel"]({photos: post.get("mediumImageUrls")})%>
           </div>

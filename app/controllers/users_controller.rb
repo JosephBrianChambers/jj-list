@@ -19,8 +19,5 @@ class UsersController < ApplicationController
     render :json => current_user.followed_users, :only => [:id, :username]
   end
   
-  def favorite_posts
-    @posts = current_user.favorite_posts
-    render "posts/index.json"
-  end
+  
 end

@@ -20,15 +20,8 @@ JjList.Views.SearchResultsView = Backbone.View.extend({
     "mouseleave .hit": "leaveHit",
     "mouseenter .star": "enterStar",
     "mouseleave .star": "leaveStar",
+    "click .star": "postStar",
     "click .hit": "detailViaHit"
-  },
-  
-  enterStar: function (event) {
-    $(event.currentTarget).toggleClass("star-preview")
-  },
-  
-  leaveStar: function (event) {
-    $(event.currentTarget).toggleClass("star-preview")
   },
   
   enterHit: function (event) {
@@ -39,6 +32,49 @@ JjList.Views.SearchResultsView = Backbone.View.extend({
   leaveHit: function (event) {
     var $hit = $(event.currentTarget);
     $hit.toggleClass("hit-hover");
+  },
+  
+  enterStar: function (event) {
+    $(event.currentTarget).toggleClass("star-preview")
+  },
+  
+  leaveStar: function (event) {
+    $(event.currentTarget).toggleClass("star-preview")
+  },
+  
+  postStar: function (event) {
+    var postId = $(event.target).parents(".hit").data('id');
+    var userId = JjList.currentUser.id;
+    var $star = $(event.currentTarget);
+    
+    //determin if post is stared(determin value of var stared)
+    var postFavorited = false;
+    JjList.currentUser.get("favoritePosts").forEach(function (post) {
+      if (postId === post.id) { postFavorited = true}
+    });
+    
+    //run an ajax request, either star or unstar
+    if (postFavorited) {
+      //destroy PostFavoriteing request
+      var modelToDestroy = JjList.currentUser.get("favoritePosts").get(postId);
+      modelToDestroy.destroy({
+        success: function (response) {
+          $star.removeClass("stared");
+        },
+      });
+    } else {
+      //create PostFavoriteing request
+      JjList.currentUser.get("favoritePosts").create({
+        //attributes
+        post_id: postId,
+        user_id: userId
+      }, {
+        //options
+        success: function (response) {
+          $star.addClass("stared")
+        },
+      });
+    };
   },
   
   detailViaHit: function (event) {
@@ -54,11 +90,13 @@ JjList.Views.SearchResultsView = Backbone.View.extend({
         url: "posts/" + postId,
         type: 'GET',
         success: function (data, status, jqXHR) { 
+          //create detail post view
           var postView = new JjList.Views.PostView({
             model: new JjList.Models.Post(data[0])
           });
-         
-          that.$el.append("<div id='modal-view'></div>");
+          //
+          //that.$el.append("<div id='modal-view'></div>");
+          //insert modal html to current view and manual trigger it
           var $modal = that.$el.find('#modal-view')
           $modal.html(postView.render().$el)
           $('#myModal').modal('toggle')

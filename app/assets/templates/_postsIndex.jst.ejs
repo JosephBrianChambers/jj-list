@@ -15,12 +15,16 @@
       <div class="inline-blk">
         <span class='price-preview post-preview-single'>$<%= post.escape("price") %></span>
 
-        <span class='location-preview post-preview-single'> (<%= post.escape("location") %>)</span>
+        <span class='location-preview post-preview-single'> (<%= post.escape("location") %>) </span>
+        <% if (post.attributes.imageUrls.length !== 0) {%>
+          <span class="haspic">pic</span>
+        <% } %>
       </div>
     </div>
   </div>
 <% }) %>
 
+<div id='modal-view'></div>
 
 
 

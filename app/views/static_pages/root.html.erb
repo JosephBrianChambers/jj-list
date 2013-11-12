@@ -12,7 +12,9 @@
     favoriteUsers: new JjList.Collections.FavoriteUsers({
       model: JjList.Models.User
     }),
-    favoritePosts: new JjList.Collections.FavoritePosts()
+    favoritePosts: new JjList.Collections.FavoritePosts({
+      model: JjList.Models.Post
+    })
   });
   
   //bootstrap currentUser favorite posts and users
