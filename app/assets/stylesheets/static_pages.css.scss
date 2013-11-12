@@ -9,7 +9,7 @@
 }
 
 #middle {
-  margin-top: 200px;
+  margin-top: 56px;
   margin-bottom: 200px;
 }
 
@@ -62,10 +62,15 @@
 
  .image-preview {
    display: inline-block;
+   height: 50px;
+   width: 50px;
+   border-radius: 6px;
+   vertical-align: top;
  }
  
  .preview {
    display: inline-block;
+   
  }
  
  .post-created-at {
@@ -78,4 +83,30 @@
    border-radius: 4px;
    padding-left: 5px;
    padding-right: 5px;
+ }
+ 
+ .star {
+   color:lightgrey;
+   font-size: 11pt;
+ }
+ 
+ .stared {
+   font-size: 11pt;
+   background: -webkit-linear-gradient(#FFC200, #FFFF00);
+   -webkit-background-clip: text;
+   -webkit-text-fill-color: transparent;
+ }
+ 
+ .hit {
+   border-top-width: 1px;
+   border-right-width: 1px;
+   margin-bottom: 3px;
+   border-style: solid;
+   border-color: transparent;
+   height: 54px;
+ }
+ 
+ .hit-hover {
+   border-color: black;
+   border-radius: 10px;
  }

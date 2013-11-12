@@ -1,13 +1,12 @@
 <% results.forEach(function (post) { %>
   <div class='hit' data-id="<%= post.id %>">
-    <div class='image-preview post-preview-single'>
-      <img src="<%= post.get("imageUrls")[0] %>">
+    <div class='image-preview post-preview-single' style="background-image: url(<%= post.get("imageUrls")[0] %>);">
+      <!-- <img src="<%= post.get("imageUrls")[0] %>"> -->
     </div>
     <div class="preview">
       <div class="inline-blk">
+        <%= JST["_previewStar"]({postId: post.id})%>
         <span class='post-created-at'><%= post.escape("created_at")%></span>
-
-        <span class='heart-link post-preview-single'>link</span>
 
         <span class='title-preview post-preview-single'><%= post.escape("title") %> </span>
       </div>
@@ -18,8 +17,6 @@
       </div>
     </div>
   </div>
-
-  <br><br>
 <% }) %>
 
 

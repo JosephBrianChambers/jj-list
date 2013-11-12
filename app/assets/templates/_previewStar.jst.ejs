@@ -1,0 +1,10 @@
+<!-- <span class='star-link post-preview-single'>link</span> -->
+
+<% var stared = JjList.currentUser.attributes.favoritePosts.forEach(function (post) { %>
+  <% if (post === postId) { %>
+      <span class="star stared glyphicon glyphicon-star"></span>
+  <% } else { %>
+      <span class="star glyphicon glyphicon-star"></span>
+  <% } %>  
+  
+<% }) %>

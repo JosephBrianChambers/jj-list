@@ -16,7 +16,19 @@ JjList.Views.SearchResultsView = Backbone.View.extend({
   },
   
   events: {
+    "mouseenter .hit": "mouseEnter",
+    "mouseleave .hit": "mouseLeave",
     "click .hit": "detailViaHit"
+  },
+  
+  mouseEnter: function (event) {
+    var $hit = $(event.currentTarget);
+    $hit.toggleClass("hit-hover");
+  },
+  
+  mouseLeave: function (event) {
+    var $hit = $(event.currentTarget);
+    $hit.toggleClass("hit-hover");
   },
   
   detailViaHit: function (event) {
