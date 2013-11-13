@@ -21,6 +21,7 @@ JjList.Views.SearchResultsView = Backbone.View.extend({
     "mouseenter .star": "enterStar",
     "mouseleave .star": "leaveStar",
     "click .star": "postStar",
+    "click .exit-modal": "exitModal",
     "click .title-preview": "detailViaHit"
   },
   
@@ -77,6 +78,10 @@ JjList.Views.SearchResultsView = Backbone.View.extend({
     };
   },
   
+  exitModal: function () {
+    $('#myModal').modal('hide')
+  },
+  
   detailViaHit: function (event) {
     var postId = $(event.currentTarget).parents('.hit').data("id")
     this.detailView(postId)
@@ -91,7 +96,6 @@ JjList.Views.SearchResultsView = Backbone.View.extend({
         type: 'GET',
         success: function (data, status, jqXHR) { 
           //create detail post view
-          debugger
           var postView = new JjList.Views.PostView({
             model: new JjList.Models.Post(data[0])
           });

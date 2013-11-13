@@ -3,7 +3,6 @@ JjList.Views.UserPostsView = Backbone.View.extend({
     //get user name whos posts to be viewed
     //generate title of template with acquired username
     this.user = options.user
-    debugger
   },
   
   template: JST['posts/user_posts'],

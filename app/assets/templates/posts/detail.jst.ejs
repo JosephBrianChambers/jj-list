@@ -10,8 +10,8 @@
         </h4>
         <p><span class="small-font">posted on </span>
            <%= post.escape("created_at")%>
-           <span ="small-font"> by </span>
-           <a href="#"><%= post.escape("authorUsername")%>
+           <span class="small-font"> by </span>
+           <a class="exit-modal" href="#users/<%= post.escape("user_id") %>/posts"><%= post.escape("authorUsername")%></a>
       </div>
       <div class="modal-body">
         <% if (post.attributes.imageUrls.length !== 0) {%>
