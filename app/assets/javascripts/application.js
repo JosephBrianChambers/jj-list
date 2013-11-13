@@ -17,7 +17,7 @@
 //= require backbone
 //= require bootstrap
 //= require jj_list
-//= require jquery.zaccordion
+//= require jquery-ui-1.10.3.custom
 //= require_tree ../templates
 //= require_tree ./models
 //= require_tree ./collections

@@ -118,6 +118,14 @@
    //cursor: pointer;
  }
  
+ .hits-list {
+   position: fixed;
+   top: 270px;
+   bottom: 50px;
+   overflow: scroll;
+   width: 600px;
+ }
+ 
  .fake-link {
      color: blue;
      text-decoration: underline;
@@ -139,8 +147,39 @@
    color: orange;
  }
  
+ .search-header {
+   width: 628px;
+   position: fixed;
+   z-index: 10;
+ }
+ 
+ .search-title {
+   font-size: 60px;
+   text-align: center;
+   display: block;
+   margin-bottom: 20px;
+ }
+ 
  .small-font {
    font-size: 10px;
+ }
+ 
+ .navbar-fixed-top {
+   margin-bottom: 0px;
+   height: 50px;
+ }
+ 
+ #tabs {
+   border-style: solid;
+   border-color: black;
+   border-radius: 10px;
+   margin-left: 0px;
+   border-left-width: 3px;
+   border-bottom-width: 3px;
+ }
+ 
+ .ui-state-default {
+   width: 48%;
  }
  
  @media (min-width: 992px) {

@@ -11,7 +11,7 @@
         <p><span class="small-font">posted on </span>
            <%= post.escape("created_at")%>
            <span class="small-font"> by </span>
-           <a class="exit-modal" href="#users/<%= post.escape("user_id") %>/posts"><%= post.escape("authorUsername")%></a>
+           <span class="exit-modal fake-link" data-url="#users/<%= post.escape("user_id") %>/posts"><%= post.escape("authorUsername")%></span>
       </div>
       <div class="modal-body">
         <% if (post.attributes.imageUrls.length !== 0) {%>
@@ -25,8 +25,10 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        <button type="button" class="btn">Star Author</button>
-        <button type="button" class="btn">Star post</button>
+        <button type="button" class="btn star-post-btn" data-id="<%= post.id %>">
+          <%= JST["_previewStar"]({postId: post.id})%> Post
+        </button>
+        <button type="button" class="btn">Author</button>
         <button type="button" class="btn">Email Author</button>
       </div>
     </div><!-- /.modal-content -->

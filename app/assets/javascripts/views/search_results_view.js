@@ -20,11 +20,13 @@ JjList.Views.SearchResultsView = Backbone.View.extend({
     "mouseleave .hit": "leaveHit",
     "mouseenter .star": "enterStar",
     "mouseleave .star": "leaveStar",
-    "click .star": "postStar",
+    "click .star": "clickStar",
+    "click .star-post-btn": "clickStarButton",
     "click .exit-modal": "exitModal",
-    "click .title-preview": "detailViaHit"
+    "click .title-preview": "detailViaHit",
   },
-  
+
+   
   enterHit: function (event) {
     var $hit = $(event.currentTarget);
     $hit.toggleClass("hit-hover");
@@ -42,11 +44,24 @@ JjList.Views.SearchResultsView = Backbone.View.extend({
   leaveStar: function (event) {
     $(event.currentTarget).toggleClass("star-preview")
   },
-  
-  postStar: function (event) {
-    var postId = $(event.target).parents(".hit").data('id');
-    var userId = JjList.currentUser.id;
+   
+  clickStar: function (event) {
+    var postId = $(event.target).parents(".hit").data("id");
     var $star = $(event.currentTarget);
+    this.postStar(postId, $star);
+  },
+  
+  clickStarButton: function (event) {
+    $star = $(event.currentTarget).children(".star")
+    postId = $(event.currentTarget).data("id")
+    this.postStar(postId, $star)
+    $('#'+postId).find('.star').toggleClass("stared")
+  },
+  
+  postStar: function (postId, $star) {
+   // var postId = $(event.target).parents(".hit").data('id');
+    var userId = JjList.currentUser.id;
+    //var $star = $(event.currentTarget);
     
     //determin if post is stared(determin value of var stared)
     var postFavorited = false;
@@ -78,8 +93,13 @@ JjList.Views.SearchResultsView = Backbone.View.extend({
     };
   },
   
-  exitModal: function () {
-    $('#myModal').modal('hide')
+  exitModal: function (event) {
+    var fragment = $(event.currentTarget).data("url");
+    
+    $('#myModal').modal('hide');
+    $('#myModal').on('hidden.bs.modal', function () {
+      JjList.postsRouter.navigate(fragment,{trigger: true});
+    });
   },
   
   detailViaHit: function (event) {

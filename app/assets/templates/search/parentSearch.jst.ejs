@@ -1,40 +1,44 @@
 <div class="row">
   <div class="col-md-9">
-
-    <div id="search-box">
-      <form id="search-form" class="form-search">
-        <div id="search-field" class"text-center search-style">
-          <input type="text" name="search[q]" id="q">
+    <div class="search-header">
+      <span class="search-title">Search Classifieds</span>
+      <div id="search-box">
+        <form id="search-form" class="form-search">
+          <div id="search-field" class"text-center search-style">
+            <input type="text" name="search[q]" id="q">
           
-          <input type="submit" value="Search" class="btn btn-primary btn-large" id="search-btn">
-        </div>
-        <div id="filters" class="search-style">
+            <input type="submit" value="Search" class="btn btn-primary btn-large" id="search-btn">
+          </div>
+          <div id="filters" class="search-style">
          
-          <label for="price_min">price</label>
-          <input type="text" name="search[min]" placeholder="min" id="price_min" class="price">
-          <input type="text" name="search[max]" placeholder="max" id="price_max" class="price">
+            <label for="price_min">price</label>
+            <input type="text" name="search[min]" placeholder="min" id="price_min" class="price">
+            <input type="text" name="search[max]" placeholder="max" id="price_max" class="price">
           
-          <span class="bar">|</span>
+            <span class="bar">|</span>
           
-          <label>
-            <input type="checkbox" name="search[pic]" value="true" id="pic-input">
-            <span class="haspic">pic</span>
-          </label>
+            <label>
+              <input type="checkbox" name="search[pic]" value="true" id="pic-input">
+              <span class="haspic">pic</span>
+            </label>
           
-          <span class="bar">|</span>
+            <span class="bar">|</span>
       
-          <label for="days">only listings </label>
-            <!-- dropdown -->
-            <select name="search[days]" id="days">
-              <option value="1" selected="1">1 day old</option>
-              <option value="2">2 days old</option>
-              <option value="3">3 days old</option>
-              <option value="4">4 days old</option>
-              <option value="5">5 days old</option>
-            </select>
-        </div>
-      </form>
+            <label for="days">only listings </label>
+              <!-- dropdown -->
+              <select name="search[days]" id="days">
+                <option value="1" selected="1">1 day old</option>
+                <option value="2">2 days old</option>
+                <option value="3">3 days old</option>
+                <option value="4">4 days old</option>
+                <option value="5">5 days old</option>
+              </select>
+          </div>
+        </form>
+      </div>
+      <h3 class="ban">
+        <span class="ban-text"></span>
+      </h3>
     </div>
-
   </div>
 </div>

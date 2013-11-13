@@ -14,27 +14,13 @@ JjList.Views.SidebarView = Backbone.View.extend({
     });
     
     this.$el.html(renderedContent);
-    this.zAccordion();
+    this.$el.find('#tabs').tabs();
     return this;
   },
   
   events: {
     
   },
-  
-  zAccordion: function () {
-  	this.$el.find("#featured").zAccordion({
-    	timeout: 4000,
-    	slideWidth: 180,
-    	width: 200,
-    	height: 270,
-      auto: false,
-      speed: 100,
-  	});
-   
-  }
-
-  
   
 })
 
