@@ -1,8 +1,10 @@
 <% var setClass = ""%>
-<% JjList.currentUser.attributes.favoritePosts.forEach(function (post) { %>
+
+<% JjList.currentUser.get("favoritePosts").forEach(function (post) { %>
+  
   <% if (post.id === postId) { %>
-    
-    <% var setClass = "stared" %>
+   
+    <% setClass = "stared" %>
   <% } %> 
 <% }) %>
 <span class="star glyphicon glyphicon-star <%= setClass %>"></span>
