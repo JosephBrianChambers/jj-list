@@ -139,6 +139,10 @@
    color: orange;
  }
  
+ .small-font {
+   font-size: 10px;
+ }
+ 
  @media (min-width: 992px) {
    .bs-sidebar.affix {
      position: fixed;

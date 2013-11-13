@@ -91,11 +91,11 @@ JjList.Views.SearchResultsView = Backbone.View.extend({
         type: 'GET',
         success: function (data, status, jqXHR) { 
           //create detail post view
+          debugger
           var postView = new JjList.Views.PostView({
             model: new JjList.Models.Post(data[0])
           });
-          //
-          //that.$el.append("<div id='modal-view'></div>");
+
           //insert modal html to current view and manual trigger it
           var $modal = that.$el.find('#modal-view')
           $modal.html(postView.render().$el)

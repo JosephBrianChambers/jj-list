@@ -8,7 +8,10 @@
         <h4 class="modal-title" id="myModalLabel">
           <%= post.escape("title") %> - $<%= post.escape("price")%> (<%= post.escape("location") %>)
         </h4>
-        <%= post.escape("created_at")%>
+        <p><span class="small-font">posted on </span>
+           <%= post.escape("created_at")%>
+           <span ="small-font"> by </span>
+           <a href="#"><%= post.escape("authorUsername")%>
       </div>
       <div class="modal-body">
         <% if (post.attributes.imageUrls.length !== 0) {%>
