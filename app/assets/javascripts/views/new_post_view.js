@@ -27,7 +27,7 @@ JjList.Views.NewPostView = Backbone.View.extend({
       data: formData,
       success: function(response, status, jqXHR) {
         //flash message on screen
-        Backbone.history.navigate("#posts/myPosts", {trigger: true});
+        Backbone.history.navigate("#users/" + JjList.currentUser.id + "/posts", {trigger: true});
       },
       
       error: function( response, status, jqxHR) {

@@ -10,7 +10,7 @@ JjList.Routers.PostsRouter = Backbone.Router.extend({
   routes: {
     "": "searchIndex",
     "posts/new": "createPost",
-    "posts/myPosts": "currentUserPosts",
+    "users/:user_id/posts": "UserPosts",
   },
   
   searchIndex: function () {
@@ -23,19 +23,26 @@ JjList.Routers.PostsRouter = Backbone.Router.extend({
     this.$rootEl.html(newPostView.render().$el);
   },
   
-  currentUserPosts: function () {
+  UserPosts: function (user_id) {
     var that = this;
-    var currentUserPosts = new JjList.Collections.UserPosts([],{
-      user_id: JjList.currentUser.id
+    var user = new JjList.Models.User({
+      id: user_id
     })
+    user.fetch({})
     
-    var currentUserPostsView = new JjList.Views.UserPostsView({
-      collection: currentUserPosts
+    var userPosts = new JjList.Collections.UserPosts([],{
+      model: JjList.Models.Post,
+      user_id: user_id
     });
     
-    currentUserPosts.fetch({
+    var userPostsView = new JjList.Views.UserPostsView({
+      collection: userPosts,
+      user: user
+    });
+    
+    userPosts.fetch({
       success: function () {
-        that.$rootEl.html(currentUserPostsView.render().$el);
+        that.$rootEl.html(userPostsView.render().$el);
       },
     });
   },
