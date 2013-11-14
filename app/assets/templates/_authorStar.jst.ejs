@@ -1,8 +1,9 @@
 <% var setClass = ""%>
 
+
 <% JjList.currentUser.get("favoriteUsers").forEach(function (user) { %>
-  
-  <% if (user.id === authorId) { %>
+  <% debugger; %>
+  <% if (user.id === parseInt(authorId)) { %>
    
     <% setClass = "stared" %>
   <% } %> 

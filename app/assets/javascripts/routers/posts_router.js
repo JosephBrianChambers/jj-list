@@ -54,7 +54,7 @@ JjList.Routers.PostsRouter = Backbone.Router.extend({
     var favoritePostsView = new JjList.Views.FavoritePostsView({
       collection: JjList.currentUser.get("favoritePosts"),
     });
-    debugger
+    
     this.$rootEl.html(favoritePostsView.render().$el);
   },
 })

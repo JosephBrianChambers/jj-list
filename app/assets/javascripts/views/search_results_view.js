@@ -47,14 +47,12 @@ JjList.Views.SearchResultsView = Backbone.View.extend({
   },
    
   clickPostStar: function (event) {
-    debugger
     var postId = $(event.target).parents(".hit").data("id");
     var $star = $(event.currentTarget);
     this.editPostFavorite(postId, $star);
   },
   
   clickStarButton: function (event) {
-    debugger
     var $star = $(event.currentTarget).children(".postStar")
     var postId = $(event.currentTarget).data("id")
     this.editPostFavorite(postId, $star)
@@ -73,7 +71,7 @@ JjList.Views.SearchResultsView = Backbone.View.extend({
     JjList.currentUser.get("favoriteUsers").forEach(function (user) {
       if (authorId === user.id) {authorFavorited = true};
     });
-    
+
     //run an ajax request, either create or destroy
     if (authorFavorited) {
       //destroy
@@ -85,17 +83,19 @@ JjList.Views.SearchResultsView = Backbone.View.extend({
       });
     } else {
       //create
-      JjList.currentUser.get("favoriteUsers").create({
-        follower_id: JjList.currentUser.id,
-        followed_id: authorId
-      }, {
-        //options
-        success:function (response) {
+      $.ajax({
+        url: "user_followings",
+        type:"POST",
+        data: {
+          follower_id: JjList.currentUser.id,
+          followed_id: authorId
+        },
+        success: function (data, status, jqXHR) {
+          JjList.currentUser.get("favoriteUsers").add(data)
           $star.addClass("stared");
         },
         
-        error: function (resp) {
-          //placeholder
+        error: function (data, status, jqXHR) {  
         },
       });
     };
@@ -109,7 +109,6 @@ JjList.Views.SearchResultsView = Backbone.View.extend({
     JjList.currentUser.get("favoritePosts").forEach(function (post) {
       if (postId === post.id) { postFavorited = true};
     });
-    debugger
     //run an ajax request, either create or destroy
     if (postFavorited) {
       //destroy PostFavoriteing request
@@ -129,10 +128,9 @@ JjList.Views.SearchResultsView = Backbone.View.extend({
           post_id: postId
         },
         success: function (data, status, jqXHR) {
-          var modelToAdd = new JjList.Models.Post(data[0])
+          //var modelToAdd = new JjList.Models.Post(data[0])
           $star.addClass("stared")
           JjList.currentUser.get("favoritePosts").add(data[0])
-          debugger
         }
       });
     };

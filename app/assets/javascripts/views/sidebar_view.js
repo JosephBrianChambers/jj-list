@@ -2,7 +2,7 @@ JjList.Views.SidebarView = Backbone.View.extend({
   className: "bs-sidebar hidden-print affix",
   
   initialize: function () {
-    //placeholder
+    this.listenTo(JjList.currentUser.get("favoriteUsers"), "add remove", this.render);
   }, 
   
   template: JST['sidebar/sidebar'],
@@ -35,8 +35,7 @@ JjList.Views.SidebarView = Backbone.View.extend({
     JjList.postsRouter.navigate("#posts/new",{trigger: true});
   },
   
-  redirectFavoritePosts: function (event) {
-   debugger 
+  redirectFavoritePosts: function (event) { 
     JjList.postsRouter.navigate("#favoritePosts", {trigger: true});
   },
   
