@@ -5,6 +5,8 @@ class PostsController < ApplicationController
   
   def create
     #find post and build associated photos
+    p params
+    p "joejoejoejeo"
     @post = Post.new(params[:post])
     @post.user_id = current_user.id
     unless params[:photos].nil?

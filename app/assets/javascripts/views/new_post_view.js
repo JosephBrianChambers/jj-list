@@ -12,15 +12,16 @@ JjList.Views.NewPostView = Backbone.View.extend({
   },
   
   events: {
-    "submit #new-post": "createPost",
+    "click #new-post": "createPost",
     "change #uploadimage": "encodeFile"
   },
   
   createPost: function(event) {
     event.preventDefault();
-    var formData = $(event.target).serializeJSON()
+    
+    var formData = $(event.currentTarget).parent().serializeJSON()
     formData.photos = this.photoFiles
-
+    
     $.ajax({
       url: "posts",
       type: "POST",
@@ -31,7 +32,6 @@ JjList.Views.NewPostView = Backbone.View.extend({
       },
       
       error: function( response, status, jqxHR) {
-        //flash message on screen
       }
     });
   },
