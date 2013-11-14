@@ -90,6 +90,11 @@
    font-size: 19px;
  }
  
+ .authorStar {
+   color:lightgrey;
+   font-size: 19px;
+ }
+ 
  .stared {
    background: -webkit-linear-gradient(#FFC200, #FFFF00);
    -webkit-background-clip: text;
@@ -110,6 +115,7 @@
    border-style: solid;
    border-color: transparent;
    height: 54px; 
+   width: 550px;
  }
  
  .hit-hover {

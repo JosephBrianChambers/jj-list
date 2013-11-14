@@ -1,3 +1,3 @@
 JjList.Models.User = Backbone.Model.extend({
-  urlRoot: "users"  
+  urlRoot: "user_followings"  
 })

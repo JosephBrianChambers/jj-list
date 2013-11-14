@@ -20,8 +20,9 @@ JjList.Views.SearchResultsView = Backbone.View.extend({
     "mouseleave .hit": "leaveHit",
     "mouseenter .star": "enterStar",
     "mouseleave .star": "leaveStar",
-    "click .star": "clickStar",
+    "click .postStar": "clickPostStar",
     "click .star-post-btn": "clickStarButton",
+    "click .star-author-btn": "clickAuthorButton",
     "click .exit-modal": "exitModal",
     "click .title-preview": "detailViaHit",
   },
@@ -45,31 +46,69 @@ JjList.Views.SearchResultsView = Backbone.View.extend({
     $(event.currentTarget).toggleClass("star-preview")
   },
    
-  clickStar: function (event) {
+  clickPostStar: function (event) {
     var postId = $(event.target).parents(".hit").data("id");
     var $star = $(event.currentTarget);
-    this.postStar(postId, $star);
+    this.editPostFavorite(postId, $star);
   },
   
   clickStarButton: function (event) {
-    $star = $(event.currentTarget).children(".star")
-    postId = $(event.currentTarget).data("id")
-    this.postStar(postId, $star)
-    $('#'+postId).find('.star').toggleClass("stared")
+    var $star = $(event.currentTarget).children(".postStar")
+    var postId = $(event.currentTarget).data("id")
+    this.editPostFavorite(postId, $star)
+    $('#'+postId).find('.postStar').toggleClass("stared")
   },
   
-  postStar: function (postId, $star) {
-   // var postId = $(event.target).parents(".hit").data('id');
-    var userId = JjList.currentUser.id;
-    //var $star = $(event.currentTarget);
-    
-    //determin if post is stared(determin value of var stared)
-    var postFavorited = false;
-    JjList.currentUser.get("favoritePosts").forEach(function (post) {
-      if (postId === post.id) { postFavorited = true}
+  clickAuthorButton: function (event) {
+    var authorId = $(event.currentTarget).data("authorid");
+    var $star = $(event.currentTarget).children('.authorStar');
+    this.editAuthorFavorite(authorId, $star);
+  },
+  
+  editAuthorFavorite: function (authorId, $star) {    
+    //determin if author is already favorited
+    var authorFavorited = false;
+    JjList.currentUser.get("favoriteUsers").forEach(function (user) {
+      if (authorId === user.id) {authorFavorited = true};
     });
     
-    //run an ajax request, either star or unstar
+    //run an ajax request, either create or destroy
+    if (authorFavorited) {
+      //destroy
+      var modelToDestroy = JjList.currentUser.get("favoriteUsers").get(authorId);
+      modelToDestroy.destroy({
+        success: function (response) {
+          $star.removeClass("stared");
+        },
+      });
+    } else {
+      //create
+      JjList.currentUser.get("favoriteUsers").create({
+        follower_id: JjList.currentUser.id,
+        followed_id: authorId
+      }, {
+        //options
+        success:function (response) {
+          $star.addClass("stared");
+        },
+        
+        error: function (resp) {
+          //placeholder
+        },
+      });
+    };
+  },
+  
+  editPostFavorite: function (postId, $star) {
+    var userId = JjList.currentUser.id;
+    
+    //determin if post is already favorited
+    var postFavorited = false;
+    JjList.currentUser.get("favoritePosts").forEach(function (post) {
+      if (postId === post.id) { postFavorited = true};
+    });
+    
+    //run an ajax request, either create or destroy
     if (postFavorited) {
       //destroy PostFavoriteing request
       var modelToDestroy = JjList.currentUser.get("favoritePosts").get(postId);

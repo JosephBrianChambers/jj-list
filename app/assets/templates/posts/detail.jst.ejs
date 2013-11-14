@@ -28,7 +28,9 @@
         <button type="button" class="btn star-post-btn" data-id="<%= post.id %>">
           <%= JST["_previewStar"]({postId: post.id})%> Post
         </button>
-        <button type="button" class="btn">Author</button>
+        <button type="button" class="btn star-author-btn" data-authorid="<%=post.escape("user_id")%>">
+         <%= JST["_authorStar"]({authorId: post.escape("user_id")})%> Author
+        </button>
         <button type="button" class="btn">Email Author</button>
       </div>
     </div><!-- /.modal-content -->

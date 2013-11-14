@@ -15,9 +15,7 @@ class UsersController < ApplicationController
     end
   end
   
-  def index
-    render :json => current_user.followed_users, :only => [:id, :username]
-  end
+
   
   def show
     @user = User.find(params[:id])
