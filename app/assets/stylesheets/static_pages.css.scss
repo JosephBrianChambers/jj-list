@@ -28,6 +28,7 @@
 .ban {
   border-top: 1px solid #ddd;
   clear: both;
+  margin-bottom: 20px;
 }
 
 .ban-text {
@@ -187,6 +188,17 @@
  .ui-state-default {
    width: 48%;
  }
+ 
+ .btn-icon {
+   text-align: left;
+   width: 140px;
+ }
+ 
+ .ui-tabs-panel {
+   text-align: center;
+ }
+ 
+
  
  @media (min-width: 992px) {
    .bs-sidebar.affix {
