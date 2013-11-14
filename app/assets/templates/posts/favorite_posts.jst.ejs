@@ -1,0 +1,10 @@
+<div>
+  <span class="search-title">Favorite Posts</span>
+  <h3 class="ban">
+    <span class="ban-text"></span>
+  </h3>
+</div>
+
+<% if (JjList.currentUser.get("favoritePosts").length !== 0) { %>
+  <%= JST["_postsIndex"]({results: favoritePosts})%>  
+<% } %>

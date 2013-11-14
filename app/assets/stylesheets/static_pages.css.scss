@@ -131,6 +131,7 @@
    bottom: 50px;
    overflow: scroll;
    width: 600px;
+   left: 38%;
  }
  
  .fake-link {
@@ -210,6 +211,12 @@
  
  .ui-tabs-panel {
    text-align: center;
+ }
+ 
+ #new-post-form {
+   width: 600px;
+   margin-left: auto;
+   margin-right: auto;
  }
  
  

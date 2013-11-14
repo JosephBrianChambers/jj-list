@@ -1,7 +1,9 @@
 <% results.forEach(function (post) { %>
+    
   <div class='hit' id="<%= post.id %>" data-id="<%= post.id %>">
+    
     <div class='image-preview post-preview-single' style="background-image: url(<%= post.get("imageUrls")[0] %>);">
-      <!-- <img src="<%= post.get("imageUrls")[0] %>"> -->
+      
     </div>
     <div class="preview">
       <div class="inline-blk">

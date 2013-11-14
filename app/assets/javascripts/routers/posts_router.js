@@ -11,6 +11,7 @@ JjList.Routers.PostsRouter = Backbone.Router.extend({
     "": "searchIndex",
     "posts/new": "createPost",
     "users/:user_id/posts": "UserPosts",
+    "favoritePosts": "favoritePosts",
   },
   
   searchIndex: function () {
@@ -46,4 +47,21 @@ JjList.Routers.PostsRouter = Backbone.Router.extend({
       },
     });
   },
+  
+  favoritePosts: function () {
+    var favoritePosts = new JjList.Collections.FavoritePosts({
+      //model: JjList.Models.Post,
+    });
+    favoritePosts.fetch()
+    
+    var favoritePostsView = new JjList.Views.FavoritePostsView({
+      collection: favoritePosts,
+    });
+    
+    this.$rootEl.html(favoritePostsView.render().$el);
+  },
 })
+
+
+
+

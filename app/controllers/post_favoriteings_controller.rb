@@ -4,7 +4,6 @@ class PostFavoriteingsController < ApplicationController
     render "posts/index.json"
   end
   
-  
   def create
     @post_favoriteing = PostFavoriteing.new({
       post_id: params[:post_id],

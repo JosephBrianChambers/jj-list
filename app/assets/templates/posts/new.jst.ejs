@@ -1,25 +1,32 @@
-!!!!! make a new post heree dude 
+<div id="form-title">
+  <span id="form-title-message" class="search-title">Create a new listing</span>
+  <h3 class="ban">
+    <span class="ban-text"></span>
+  </h3>
+</div>
 
-<form id="new-post" enctype="multipart/form-data">
-  
-  <label for="price">Price</label>
-  <input type="text" name="post[price]" id="price">
-  
-  <label for="title">Title</label>
-  <input type="text" name="post[title]" id="title">
-  
-  <label for="post-body">Description</label>
-  <textarea form="new-post" name="post[body]" id="post-body"></textarea>
-  
-  <label for="location">Location</label>
-  <input type="text" name="post[location]" id="location">
-  
-  <label for="uploadimage">UploadImage</label> 
-  <input type="file" 
-         name="photos[]" 
-         id="uploadimage"
-         multiple>
-  
-  
-  <input type="submit" value="create post!">
+<form id="new-post-form" enctype="multipart/form-data" role="form">
+  <div class="form-group">
+    <label for="title">Title</label>
+    <input type="text" name="post[title]" id="title" class="form-control">
+  </div>
+  <div class="form-group">
+    <label for="price">Price</label>
+    <input type="text" name="post[price]" id="price" class="form-control">
+  </div>
+  <div class="form-group">
+    <label for="location">Location</label>
+    <input type="text" name="post[location]" id="location" class="form-control">
+  </div>
+  <div class="form-group">
+    <label for="post-body">Description</label>
+    <textarea form="new-post" name="post[body]" id="post-body" class="form-control" rows="10"></textarea>
+  </div>
+    <label for="uploadimage">UploadImage</label> 
+    <input type="file" 
+           name="photos[]" 
+           id="uploadimage"
+           multiple>
+    <input type="submit" class="btn btn-default" value="create post!">
+  </div>
 </form>
