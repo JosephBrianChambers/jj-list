@@ -183,11 +183,25 @@
    margin-left: 0px;
    border-left-width: 3px;
    border-bottom-width: 3px;
+   position: fixed;
+   top: 50%;
+   margin-top: -195px;
  }
  
  .ui-state-default {
    width: 48%;
  }
+ 
+ #tabs-1 {
+   height: 334px;
+   width: 224px;
+ }
+ 
+ #tabs-2 {
+   height: 334px;
+   width: 224px;
+ }
+ 
  
  .btn-icon {
    text-align: left;
@@ -198,7 +212,6 @@
    text-align: center;
  }
  
-
  
  @media (min-width: 992px) {
    .bs-sidebar.affix {
