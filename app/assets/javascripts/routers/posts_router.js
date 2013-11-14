@@ -29,7 +29,9 @@ JjList.Routers.PostsRouter = Backbone.Router.extend({
     var user = new JjList.Models.User({
       id: user_id
     })
-    user.fetch({})
+    user.fetch({
+      rootUrl: "users/1"
+    })
     
     var userPosts = new JjList.Collections.UserPosts([],{
       model: JjList.Models.Post,

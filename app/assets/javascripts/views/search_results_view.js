@@ -75,9 +75,14 @@ JjList.Views.SearchResultsView = Backbone.View.extend({
     //run an ajax request, either create or destroy
     if (authorFavorited) {
       //destroy
-      var modelToDestroy = JjList.currentUser.get("favoriteUsers").get(authorId);
-      modelToDestroy.destroy({
-        success: function (response) {
+      
+      $.ajax({
+        url: "user_followings/" + authorId,
+        type: "DELETE",
+        success: function(data, status, jqXHR) {
+          // !BAD need to refactor routes and use Backbone collectons for this.
+          var modelToRemove = JjList.currentUser.get("favoriteUsers").get(authorId)
+          JjList.currentUser.get("favoriteUsers").remove(modelToRemove)
           $star.removeClass("stared");
         },
       });
