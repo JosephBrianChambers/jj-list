@@ -1,4 +1,4 @@
-JjList.Views.UserPostsView = Backbone.View.extend({
+JjList.Views.UserPostsView = JjList.Views.HitsListMixin.extend({
   initialize: function (options) {
     //get user name whos posts to be viewed
     //generate title of template with acquired username

@@ -1,4 +1,4 @@
-JjList.Views.FavoritePostsView = Backbone.View.extend({
+JjList.Views.FavoritePostsView = JjList.Views.HitsListMixin.extend({
   initialize: function (options) {
     //placeholder    
   },

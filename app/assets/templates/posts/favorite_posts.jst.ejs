@@ -6,7 +6,10 @@
 </div>
 
 <div class="hits-list">
-<% if (JjList.currentUser.get("favoritePosts").length !== 0) { %>
-  <%= JST["_postsIndex"]({results: favoritePosts})%>  
-<% } %>
+  <% if (JjList.currentUser.get("favoritePosts").length !== 0) { %>
+    <%= JST["_postsIndex"]({results: favoritePosts})%>  
+  <% } %>
+  
 </div>
+
+<div id='modal-view'></div>
