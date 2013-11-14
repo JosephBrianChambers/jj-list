@@ -10,20 +10,18 @@
     id: <%= current_user.id %>,
     username: "<%= current_user.username %>",
     favoriteUsers: new JjList.Collections.FavoriteUsers({
-      model: JjList.Models.User
     }),
     favoritePosts: new JjList.Collections.FavoritePosts({
-      model: JjList.Models.Post
     })
   });
   
   //bootstrap currentUser favorite posts and users
-  JjList.currentUser.attributes.favoriteUsers.fetch({
+  JjList.currentUser.get("favoriteUsers").fetch({
     success:function (collection, response, options) {
-      JjList.currentUser.attributes.favoritePosts.fetch({
+      JjList.currentUser.get("favoritePosts").fetch({
         success: function (colleciton, response, options) {
           JjList.initialize();
-          
+          debugger
         }
       })
     }

@@ -36,7 +36,7 @@ JjList.Views.SidebarView = Backbone.View.extend({
   },
   
   redirectFavoritePosts: function (event) {
-    
+   debugger 
     JjList.postsRouter.navigate("#favoritePosts", {trigger: true});
   },
   

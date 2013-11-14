@@ -1,6 +1,6 @@
 class PostFavoriteingsController < ApplicationController
   def index
-    @posts = current_user.favorite_posts
+    @posts = current_user.favorite_posts.includes(:photos)
     render "posts/index.json"
   end
   
@@ -11,7 +11,9 @@ class PostFavoriteingsController < ApplicationController
     })
     
     if @post_favoriteing.save
-      render :json => Post.find(params[:post_id])
+      #using @posts(plurl) to utilize RABL template
+      @posts = Post.includes(:photos).find(params[:post_id])
+      render "posts/index.json"
     else
       render :json => @post_favoriteing.errors.full_messages
     end

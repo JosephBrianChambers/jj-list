@@ -47,12 +47,14 @@ JjList.Views.SearchResultsView = Backbone.View.extend({
   },
    
   clickPostStar: function (event) {
+    debugger
     var postId = $(event.target).parents(".hit").data("id");
     var $star = $(event.currentTarget);
     this.editPostFavorite(postId, $star);
   },
   
   clickStarButton: function (event) {
+    debugger
     var $star = $(event.currentTarget).children(".postStar")
     var postId = $(event.currentTarget).data("id")
     this.editPostFavorite(postId, $star)
@@ -107,7 +109,7 @@ JjList.Views.SearchResultsView = Backbone.View.extend({
     JjList.currentUser.get("favoritePosts").forEach(function (post) {
       if (postId === post.id) { postFavorited = true};
     });
-    
+    debugger
     //run an ajax request, either create or destroy
     if (postFavorited) {
       //destroy PostFavoriteing request
@@ -119,15 +121,19 @@ JjList.Views.SearchResultsView = Backbone.View.extend({
       });
     } else {
       //create PostFavoriteing request
-      JjList.currentUser.get("favoritePosts").create({
-        //attributes
-        post_id: postId,
-        user_id: userId
-      }, {
-        //options
-        success: function (response) {
-          $star.addClass("stared")
+      $.ajax({
+        url: "post_favoriteings",
+        type:"POST",
+        data: {
+          user_id: userId,
+          post_id: postId
         },
+        success: function (data, status, jqXHR) {
+          var modelToAdd = new JjList.Models.Post(data[0])
+          $star.addClass("stared")
+          JjList.currentUser.get("favoritePosts").add(data[0])
+          debugger
+        }
       });
     };
   },
