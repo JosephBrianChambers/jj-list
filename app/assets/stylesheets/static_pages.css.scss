@@ -119,13 +119,15 @@
  }
  
  .stared {
-   background: -webkit-linear-gradient(#FFC200, #FFFF00);
+   background-color: darkorange;
+   color: darkorange;
    -webkit-background-clip: text;
    -webkit-text-fill-color: transparent;
  }
  
  .star-preview {
-   background: -webkit-linear-gradient(#FFC200, #FFFF00);
+   background-color: darkorange;
+   color: darkorange;
    -webkit-background-clip: text;
    -webkit-text-fill-color: transparent;
    cursor: pointer;
