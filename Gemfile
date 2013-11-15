@@ -31,10 +31,11 @@ gem 'textacular', '~>3.0'
 gem 'ejs'
 gem 'rabl'
 gem 'oj'
+gem 'httparty'
+gem 'faker'
 group :development do
   gem 'debugger'
-  gem 'httparty'
-  gem 'faker'
+
 end 
 
 # To use ActiveModel has_secure_password

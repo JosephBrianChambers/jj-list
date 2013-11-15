@@ -151,14 +151,14 @@ scrape_str = File.read(scrape)
 #arr of arays, imageUrl, title, price, description
 scrape_data = scrape_str.scan(/src="([\S]+jpeg?)"\/[\S+\s*]+?class="t">([\S+\s*]+?)<\/a>[\S+\s*]+?\$(\S+)[\s+\S*]+?vblock"><p>([\s*\S*]+?)<\/p>/m)
 
-scrape_data.each do |post_data|
-  newpost = Post.new(:user_id => user_ids.sample, :price => post_data[2], :title => post_data[1], :body => post_data[3], :location => locations.sample)
-  if no_pic_gen.sample < 7
-    newpost.photos.build(:image => post_data[0])
+ActiveRecord::Base.transaction do
+  scrape_data.each do |post_data|
+    newpost = Post.new(:user_id => user_ids.sample, :price => post_data[2], :title => post_data[1], :body => post_data[3], :location => locations.sample)
+    if no_pic_gen.sample < 7
+      newpost.photos.build(:image => post_data[0])
+    end
+    newpost.save!
   end
-  newpost.save
-end
-
-
+end#transaction 
 
 
