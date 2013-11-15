@@ -13,6 +13,7 @@ urls_file = "urls_file.txt"
 scrape = "text_scrape.txt"
 #results_file = "results.txt"
 user_ids = (5..30).to_a
+no_pic_gen = (1..10).to_a
 locations = [
 "Alamo Square",
 "Anza Vista",
@@ -152,7 +153,9 @@ scrape_data = scrape_str.scan(/src="([\S]+jpeg?)"\/[\S+\s*]+?class="t">([\S+\s*]
 
 scrape_data.each do |post_data|
   newpost = Post.new(:user_id => user_ids.sample, :price => post_data[2], :title => post_data[1], :body => post_data[3], :location => locations.sample)
-  newpost.photos.build(:image => post_data[0])
+  if no_pic_gen.sample < 7
+    newpost.photos.build(:image => post_data[0])
+  end
   newpost.save
 end
 
