@@ -11,7 +11,7 @@
         <span class='post-created-at'><%= post.escape("created_at")%></span>
 
         <span class='title-preview fake-link post-preview-single'>
-          <a href="#" class="detail"><%= post.escape("title") %></a> 
+          <a href="#" class="detail"><%= post.escape("title").slice(0,58) %></a> 
         </span>
       </div>
       <div class="inline-blk set-w">
