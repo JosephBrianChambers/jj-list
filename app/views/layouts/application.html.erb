@@ -13,6 +13,10 @@
       <div id="header" class="row">
         <div class="col-md-12">
           <div class="navbar navbar-fixed-top" id="header-nav">
+            <div >
+              <a class="site-link" href="<%=welcome_url %>">jj's List</a>
+              
+            </div>
             <% if logged_in? %>
               <%= render partial: "layouts/logout", locals: {}%>
             <% else %>
@@ -32,8 +36,7 @@
       <div id="footer" class="row">
         <div class="col-md-12">
           <div id="footer-nav" class="navbar navbar-fixed-bottom">
-            place ABOUT link        footer!!!!   
-            place CARRERS link 
+
           </div>
         </div>
       </div>

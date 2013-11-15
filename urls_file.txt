@@ -1,0 +1,6 @@
+http://bayarea.ebayclassifieds.com/for-sale/?catId=100010&maxPrice=500&page=1
+http://bayarea.ebayclassifieds.com/for-sale/?catId=100010&maxPrice=500&page=2
+http://bayarea.ebayclassifieds.com/sporting-goods/?catId=100132&maxPrice=500
+http://bayarea.ebayclassifieds.com/sporting-goods/?catId=100132&maxPrice=500&page=1
+http://bayarea.ebayclassifieds.com/sporting-goods/?catId=100132&maxPrice=500&page=2
+http://bayarea.ebayclassifieds.com/sporting-goods/?catId=100132&maxPrice=500&page=3

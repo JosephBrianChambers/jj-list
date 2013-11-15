@@ -33,6 +33,8 @@ gem 'rabl'
 gem 'oj'
 group :development do
   gem 'debugger'
+  gem 'httparty'
+  gem 'faker'
 end 
 
 # To use ActiveModel has_secure_password

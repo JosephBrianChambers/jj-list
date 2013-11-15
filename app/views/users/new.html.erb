@@ -1,17 +1,28 @@
-This is the new user sign up page
+<h1 class="sign-up-title">
+  Sign up
+</h1>
 
-<form action="<%= users_url %>" method="post" accept-charset="utf-8">
-  <input type="hidden" name="authenticity_token" value="<%=form_authenticity_token%>">
-  
-  <label for="username">Username</label>
-  <input type="text" name="user[username]" id="username">
-  
-  
-  <label for="email">Email:</label>
-  <input type="text" name="user[email]" value="<%= @user.email %>" id="email">
-  
-  <label for="password">Password:</label>
-  <input type="password" name="user[password]" id="password">
-  
-  <p><input type="submit" value="Sign In!"></p>
-</form>
+<h3 class="ban">
+  <span class="ban-text"></span>
+</h3>
+
+<div class="sign-up-form">
+  <form action="<%= users_url %>" method="post" accept-charset="utf-8" role="form">
+    <input type="hidden" name="authenticity_token" value="<%=form_authenticity_token%>">
+    <div class="form-group">
+      <label for="username">Username</label>
+      <input type="text" name="user[username]" id="username" class="form-control">
+    </div>
+    <div class="form-group">
+      <label for="email">Email:</label>
+      <input type="text" name="user[email]" value="<%= @user.email %>" id="email" class="form-control">
+    </div>
+    <div class="form-group">
+      <label for="password">Password:</label>
+      <input type="password" name="user[password]" id="password" class="form-control">
+    </div>
+    <div class="form-group">
+      <p><input type="submit" value="Sign In!"></p>
+    </div>
+  </form>
+</div>

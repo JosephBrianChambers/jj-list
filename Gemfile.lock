@@ -66,10 +66,15 @@ GEM
     ejs (1.1.1)
     erubis (2.7.0)
     execjs (2.0.2)
+    faker (1.2.0)
+      i18n (~> 0.5)
     figaro (0.7.0)
       bundler (~> 1.0)
       rails (>= 3, < 5)
     hike (1.2.3)
+    httparty (0.12.0)
+      json (~> 1.8)
+      multi_xml (>= 0.5.2)
     i18n (0.6.5)
     journey (1.0.4)
     jquery-rails (3.0.4)
@@ -81,6 +86,7 @@ GEM
       treetop (~> 1.4.8)
     mime-types (1.25)
     multi_json (1.8.2)
+    multi_xml (0.5.5)
     nokogiri (1.5.10)
     oj (2.1.7)
     paperclip (3.5.2)
@@ -150,7 +156,9 @@ DEPENDENCIES
   coffee-rails (~> 3.2.1)
   debugger
   ejs
+  faker
   figaro
+  httparty
   jquery-rails
   oj
   paperclip
