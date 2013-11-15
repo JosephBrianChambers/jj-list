@@ -10,6 +10,7 @@ JjList.Views.HitsListMixin = Backbone.View.extend({
     "click .star-author-btn": "clickAuthorButton",
     "click .exit-modal": "exitModal",
     "click .title-preview": "detailViaHit",
+    //"click .email-author": "emailAuthor",
   },
 
    
@@ -165,4 +166,6 @@ JjList.Views.HitsListMixin = Backbone.View.extend({
     //nessary to pass variable's to ajax success callback
     test(this);
   },
+  
+
 })

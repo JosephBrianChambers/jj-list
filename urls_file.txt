@@ -1,6 +1,9 @@
-http://bayarea.ebayclassifieds.com/for-sale/?catId=100010&maxPrice=500&page=1
-http://bayarea.ebayclassifieds.com/for-sale/?catId=100010&maxPrice=500&page=2
-http://bayarea.ebayclassifieds.com/sporting-goods/?catId=100132&maxPrice=500
-http://bayarea.ebayclassifieds.com/sporting-goods/?catId=100132&maxPrice=500&page=1
-http://bayarea.ebayclassifieds.com/sporting-goods/?catId=100132&maxPrice=500&page=2
-http://bayarea.ebayclassifieds.com/sporting-goods/?catId=100132&maxPrice=500&page=3
+http://bayarea.ebayclassifieds.com/books-magazines/?catId=100109&maxPrice=5000http://bayarea.ebayclassifieds.com/books-magazines/?catId=100109&maxPrice=5000&page=1
+http://bayarea.ebayclassifieds.com/books-magazines/?catId=100109&maxPrice=5000&page=2
+http://bayarea.ebayclassifieds.com/books-magazines/?catId=100109&maxPrice=5000&page=3
+http://bayarea.ebayclassifieds.com/collectibles/?catId=100013&maxPrice=5000http://bayarea.ebayclassifieds.com/collectibles/?catId=100013&maxPrice=5000&page=1
+http://bayarea.ebayclassifieds.com/collectibles/?catId=100013&maxPrice=5000&page=1
+http://bayarea.ebayclassifieds.com/collectibles/?catId=100013&maxPrice=5000&page=2
+http://bayarea.ebayclassifieds.com/collectibles/?catId=100013&maxPrice=5000&page=3http://bayarea.ebayclassifieds.com/collectibles/?catId=100013&maxPrice=5000&page=4
+http://bayarea.ebayclassifieds.com/collectibles/?catId=100013&maxPrice=5000&page=5
+http://bayarea.ebayclassifieds.com/collectibles/?catId=100013&maxPrice=5000&page=6
