@@ -1,6 +1,7 @@
 JjList::Application.routes.draw do
   root to: 'StaticPages#root'
   get '/welcome', to: 'StaticPages#welcome' 
+  get '/guest', to: 'Sessions#guest'
   resources :users, :only => [:create, :new, :show] do
     scope module: 'users' do
       resources :posts, :only => [:index] 

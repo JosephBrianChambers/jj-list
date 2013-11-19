@@ -40,7 +40,7 @@ JjList.Views.NewPostView = Backbone.View.extend({
     var that = this;
     var files = event.currentTarget.files
     var convertedFiles = []
-    
+    debugger
     //reads and pushes converted files one at a time, waiting until finished
     //runs a callback only after all files are pushed into array
     var helper = function(idx, callback) {

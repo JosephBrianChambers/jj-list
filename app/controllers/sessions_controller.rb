@@ -23,4 +23,12 @@ class SessionsController < ApplicationController
     session[:session_token] = nil
     redirect_to root_url  
   end
+  
+  
+  def guest
+    #35 is guest id
+    @guest = User.find(35)
+    session[:session_token] = @guest.reset_session_token!
+    redirect_to root_url
+  end
 end

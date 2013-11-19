@@ -102,34 +102,32 @@
  }
  
  .price-preview {
-   border: solid 1px lightgrey;
+   border: solid 1px grey;
    border-radius: 4px;
    padding-left: 5px;
    padding-right: 5px;
  }
  
  .star {
-   color:lightgrey;
+   color:grey;
    font-size: 19px;
  }
  
  .authorStar {
-   color:lightgrey;
+   color:grey;
    font-size: 19px;
  }
  
  .stared {
    //background-color: darkorange;
-   color: darkorange;
-   -webkit-background-clip: text;
-   -webkit-text-fill-color: transparent;
+   color: rgb(255, 143, 0);
+
  }
  
  .star-preview {
    //background-color: darkorange;
-   color: darkorange;
-   -webkit-background-clip: text;
-   -webkit-text-fill-color: transparent;
+   color: rgb(255, 143, 0);
+
    cursor: pointer;
  }
  
@@ -260,6 +258,9 @@
  body
  {
  background-image:url('clouds-1200-light.jpg');
+ background-size:100% 100%;
+ background-repeat:no-repeat;
+ //background-size:contain;
  } 
  
  #welcome-div {
@@ -309,6 +310,21 @@
    color: rgb(231, 110, 29);
  }
  
+// .icon {
+//   display: inline-block;
+// }
+// 
+// #connect {
+//   background-image:url('connect.png');
+// }
+// 
+// #inquire {
+//   background-image:url('inquire.png');
+// }
+// 
+// #own {
+//   background-image:url('own.png');
+// }
 // .set-w {
 //   width:329px;
 // }
