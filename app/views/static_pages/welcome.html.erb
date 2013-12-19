@@ -1,45 +1,52 @@
 
 
 
-<div id="welcome" class="row">
-  <div class='col-md-12' id="welcome-div">
-    <h1 id="welcome-title">
-      Welcome to <span class="make-orange">jj's List</span>
-    </h1>
-    <h3>
-      Buy and Sell used Goods in your neighborhood
-    </h3>
-    <ul class="welcome-list">
-      <li>search through all listings in one place</li>
-      <li>bookmark and keep track of important listings</li>
-      <li>follow intresting users for quick access to their posts</li>
-    </ul>
-    
-    <form action="<%=guest_url%> " method="get" accept-charset="utf-8">
-      <input type="hidden" name="authenticity_token" value="<%=form_authenticity_token%>">
-    
-      <input class="guest-login-btn btn btn-success btn-large" 
-             type="submit" 
-             value="Log in as guest and try for free!">
-    </form>
-   
-  </div> 
-</div>
 
-<!-- <div id="quotes-div" class="row">
-  <div class="col-md-12">
-    <blockquote class="block-quote-1">
-      <p>Amazing! Very aerodynamic</p>
-      <small>Aaron <cite title="Source Title"></cite></small>
-    </blockquote>
-    
-    <blockquote class="block-quote-2">
-      <p>Why do whales beach themselves?</p>
-      <small>Matt <cite title="Source Title"></cite></small>
-    </blockquote>
-    <blockquote class="block-quote-3">
-      <p>How long is a piece of string?</p>
-      <small>Sara <cite title="Source Title"></cite></small>
-    </blockquote>
+  
+  
+  <div class="row">
+    <div class="col-md-12">
+      <div id="welcome-div">
+        <h1 id="welcome-title">
+          Welcome to <span class="make-orange">jj's List</span>
+        </h1>
+        <h3>
+          Buy and Sell used Goods in your neighborhood
+        </h3>
+      </div>
+    </div>
   </div>
-</div> -->
+  
+  <div class="row jj-v-pad">
+    <div class="col-md-4 jj-center">
+      <p class="jj-icon glyphicon glyphicon-search"> </p>
+      <p>Search all listings in one place</p>
+    </div>
+    <div class="col-md-4 jj-center">
+      <p class="jj-icon glyphicon glyphicon-tags"> </p>
+      <p>Bookmark important listings</p>
+    </div>
+    <div class="col-me-4 jj-center">
+      <p class="jj-icon glyphicon glyphicon-user"> </p>
+      <p>Follow other users listings</p>
+    </div> 
+  </div>
+  
+  <div class="row">
+    <div class="col-md-12">
+      <div class="jj-center">
+        <form action="<%=guest_url%> " method="get">
+          <input type="hidden" name="authenticity_token" value="<%=form_authenticity_token%>">
+    
+          <input class="guest-login-btn btn btn-success btn-large" 
+                 type="submit" 
+                 value="Log in as guest and try for free!">
+        </form>
+      </div>
+    </div>
+  </div>
+  
+  
+
+  
+
