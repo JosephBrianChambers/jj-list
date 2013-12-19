@@ -9,6 +9,7 @@
 #middle {
   margin-top: 76px;
   margin-bottom: 200px;
+  
 }
 
 #footer-nav {
@@ -31,10 +32,10 @@
 
 .site-link {
   color: #428bca;
-  position: fixed;
-  left: 4%;
-  top: 1%;
-  font-size: 26px;
+  font-size: 33px;
+  margin-bottom: 20px;
+  margin-top: 0px;
+
 }
 
 .favorite-users {
@@ -199,14 +200,9 @@
  #header-nav {
    background: linear-gradient(black, black, black,rgba(125, 195, 241, 0));
    border: none;
-   height: 70px;
+  // height: 70px;
  }
- 
- .navbar-fixed-top {
-//   margin-bottom: 0px;
-//   height: 50px;
- }
- 
+
  #tabs {
    border-style: solid;
    border-color: black;
@@ -322,15 +318,7 @@
    color: orange;
  }
  
- @media (min-width: 992px) {
-   .bs-sidebar.affix {
-     position: fixed;
-     top: 80px;
-   }
+ .jj-input-width {
+   width: 120px;
  }
  
- @media (min-width: 992px) {
-   .bs-sidebar.affix, .bs-sidebar.affix-bottom {
-   width: 213px;
-   }
- }

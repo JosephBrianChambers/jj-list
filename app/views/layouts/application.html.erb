@@ -9,36 +9,31 @@
 </head>
   <body>
     <div class="container">
-        
-      <div class="row" id="header">
+      
+      <div class="row" id="header"> 
         <div class="col-md-12">
           <div class="navbar navbar-fixed-top" id="header-nav">
-            <div class="row">
-              <div class="col-md-6">
-                <div >
-                  <a class="site-link" href="<%=welcome_url %>">jj's List</a>
-                </div>
-              </div>
-              <div class="col-md-6">
-                <% if logged_in? %>
-                  <%= render partial: "layouts/logout", locals: {}%>
-                <% else %>
-                  <%= render partial: "layouts/login", locals: {} %>
-                <% end %> 
-              </div>
+            <div>
+              <a class="navbar-text site-link" href="<%=welcome_url %>">jj's List</a>
             </div>
-          </div>
-        </div>
+            <% if logged_in? %>
+              <%= render partial: "layouts/logout", locals: {}%>
+            <% else %>
+              <%= render partial: "layouts/login", locals: {} %>
+            <% end %>             
+          </div>      
+        </div> 
       </div>
-  
-      <div id="middle" class="row">
+        
+
+      <div class="row" id="middle">
         <div class="col-md-12">
           <%= flash[:notice] if flash[:notice] %>
           <%= yield %>  
         </div>
       </div>
     
-      <div id="footer" class="row">
+      <div class="row" id="footer">
         <div class="col-md-12">
           <div id="footer-nav" class="navbar navbar-fixed-bottom">
 
