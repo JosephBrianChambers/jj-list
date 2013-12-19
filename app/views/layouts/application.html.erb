@@ -16,11 +16,13 @@
             <div>
               <a class="navbar-text site-link" href="<%=welcome_url %>">jj's List</a>
             </div>
-            <% if logged_in? %>
-              <%= render partial: "layouts/logout", locals: {}%>
-            <% else %>
-              <%= render partial: "layouts/login", locals: {} %>
-            <% end %>             
+              <div class="jj-right-buffer">
+              <% if logged_in? %>
+                <%= render partial: "layouts/logout", locals: {}%>
+              <% else %>
+                <%= render partial: "layouts/login", locals: {} %>
+              <% end %>      
+            </div>       
           </div>      
         </div> 
       </div>

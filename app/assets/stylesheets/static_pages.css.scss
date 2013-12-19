@@ -17,21 +17,11 @@
 }
 
 .greeting-msg {
-  color: #428bca;
-}
-
-
-
-.site-name {
-  color: #428bca;
-  position: fixed;
-  left: 4%;
-  top: 1%;
-  font-size: 26px;
+  color: darkorange;
 }
 
 .site-link {
-  color: #428bca;
+  color: darkorange;
   font-size: 33px;
   margin-bottom: 20px;
   margin-top: 0px;
@@ -320,5 +310,9 @@
  
  .jj-input-width {
    width: 120px;
+ }
+ 
+ .jj-right-buffer {
+   margin-right: 20px;
  }
  
