@@ -7,11 +7,11 @@
 #header-nav {
   background: linear-gradient(black, black, black,rgba(125, 195, 241, 0));
   border: none;
-  height: 50px;
+  height: 70px;
 }
 
 #middle {
-  margin-top: 56px;
+  margin-top: 76px;
   margin-bottom: 200px;
 }
 
@@ -310,27 +310,7 @@
  
  .make-orange {
    color: rgb(231, 110, 29);
- }
- 
-// .icon {
-//   display: inline-block;
-// }
-// 
-// #connect {
-//   background-image:url('connect.png');
-// }
-// 
-// #inquire {
-//   background-image:url('inquire.png');
-// }
-// 
-// #own {
-//   background-image:url('own.png');
-// }
-// .set-w {
-//   width:329px;
-// }
- 
+ } 
  
  @media (min-width: 992px) {
    .bs-sidebar.affix {
