@@ -61,7 +61,6 @@ JjList.Views.HitsListMixin = Backbone.View.extend({
     //run an ajax request, either create or destroy
     if (authorFavorited) {
       //destroy
-      
       $.ajax({
         url: "user_followings/" + authorId,
         type: "DELETE",

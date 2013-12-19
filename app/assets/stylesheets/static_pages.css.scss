@@ -5,7 +5,9 @@
 
 
 #header-nav {
-  background-color: rgb(0, 0, 0);
+  background: linear-gradient(black, black, black,rgba(125, 195, 241, 0));
+  border: none;
+  height: 50px;
 }
 
 #middle {
@@ -14,7 +16,7 @@
 }
 
 #footer-nav {
-  background-color: rgb(0, 0, 0);
+  background-color: black;
 }
 
 .greeting-msg {
