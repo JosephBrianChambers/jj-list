@@ -1,5 +1,5 @@
 JjList.Views.SidebarView = Backbone.View.extend({
-  className: "bs-sidebar hidden-print affix",
+  className: "bs-sidebar hidden-print",
   
   initialize: function () {
     this.listenTo(JjList.currentUser.get("favoriteUsers"), "add remove", this.render);

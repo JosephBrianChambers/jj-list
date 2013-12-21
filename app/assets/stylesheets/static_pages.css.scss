@@ -8,7 +8,7 @@
 
 #middle {
   margin-top: 76px;
-  margin-bottom: 200px;
+  margin-bottom: 90px;
   
 }
 
@@ -197,17 +197,14 @@
    border-style: solid;
    border-color: black;
    border-radius: 10px;
-   margin-left: 0px;
    border-left-width: 3px;
    border-bottom-width: 3px;
-   position: fixed;
-   top: 50%;
-   margin-top: -195px;
+   margin-top: 107px;
  }
  
  .jj-tab-fmt {
-   height: 334px;
-   width: 224px;
+   height: 216px;
+   width: 100%;
  }
  
  .jj-float-right {
@@ -225,12 +222,16 @@
  .ui-tabs-anchor {
    text-align: center;
    width: 100%;
+   padding: .5em !important;
  }
  
   .ui-widget-content {
     background: rgba(0, 0, 0, 0.5);
   }
 
+  #tabs-2 {
+    overflow: scroll;
+  }
  
  #new-post-form {
    width: 600px;
@@ -244,6 +245,7 @@
  }
  
  .list-favorite-username {
+   color: lightblue;
    font-size: 20px;
  }
  
@@ -257,7 +259,6 @@
  background-image:url('clouds-1200-light.jpg');
  background-size:100% 100%;
  background-repeat:no-repeat;
- //background-size:contain;
  } 
  
  #welcome-div {
