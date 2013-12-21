@@ -6,7 +6,47 @@
 </div>
 
 <form id="new-post-form" enctype="multipart/form-data" role="form">
-  <div class="form-group">
+  <div class="row">
+    <div class="col-md-4">
+      <div class="form-group">
+        <label for="title">Title</label>
+        <input type="text" name="post[title]" id="title" class="form-control">
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="form-group">
+        <label for="price">Price</label>
+        <input type="text" name="post[price]" id="price" class="form-control">
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="form-group">
+        <label for="location">Location</label>
+        <input type="text" name="post[location]" id="location" class="form-control">
+      </div>
+    </div>
+  </div>
+  
+  <div class="row">
+    <div class="col-md-8">
+      <div class="form-group">
+        <label for="post-body">Description</label>
+        <textarea name="post[body]" form="new-post-form" id="post-body" class="form-control" rows="8"></textarea>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div>
+        <label for="uploadimage">Upload Image(s)</label> 
+        <input type="file" 
+               name="photos[]" 
+               id="uploadimage"
+               multiple>
+      </div>
+    </div>
+  </div>
+  
+  
+  <!-- <div class="form-group">
     <label for="title">Title</label>
     <input type="text" name="post[title]" id="title" class="form-control">
   </div>
@@ -22,12 +62,13 @@
     <label for="post-body">Description</label>
     <textarea name="post[body]" form="new-post-form" id="post-body" class="form-control" rows="8"></textarea>
   </div>
+  <div>
     <label for="uploadimage">UploadImage</label> 
     <input type="file" 
            name="photos[]" 
            id="uploadimage"
            multiple>
-  </div>
-    <input type="submit" class="btn btn-default" value="create post!" id="new-post">
+  </div> -->
+    <input type="submit" class="btn btn-default" value="Create Post!" id="new-post">
     
 </form>
