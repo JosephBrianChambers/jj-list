@@ -205,30 +205,32 @@
    margin-top: -195px;
  }
  
- .ui-state-default {
+ .jj-tab-fmt {
+   height: 334px;
+   width: 224px;
+ }
+ 
+ .jj-float-right {
+   float: right !important;
+ }
+ 
+ .ui-corner-top {
    width: 48%;
- }
- 
- #tabs-1 {
-   height: 334px;
-   width: 224px;
- }
- 
- #tabs-2 {
-   height: 334px;
-   width: 224px;
-   text-align: center;
- }
- 
- 
- .btn-icon {
-   text-align: left;
-   width: 140px;
  }
  
  .ui-tabs-panel {
    text-align: center;
  }
+ 
+ .ui-tabs-anchor {
+   text-align: center;
+   width: 100%;
+ }
+ 
+  .ui-widget-content {
+    background: rgba(0, 0, 0, 0.5);
+  }
+
  
  #new-post-form {
    width: 600px;
@@ -243,6 +245,11 @@
  
  .list-favorite-username {
    font-size: 20px;
+ }
+ 
+ .btn-icon {
+   text-align: left;
+   width: 140px;
  }
  
  body
@@ -279,10 +286,6 @@
  
  .block-quote-3 {
    text-align: right;
- }
- 
- .ui-tabs-anchor {
-   color: #428bca;
  }
  
  .sign-up-form {
