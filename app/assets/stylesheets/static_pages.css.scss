@@ -2,10 +2,6 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-
-
-
-
 #middle {
   margin-top: 76px;
 //  margin-bottom: 90px;
@@ -128,7 +124,9 @@ height: 500px;
    border-style: solid;
    border-color: transparent;
    height: 54px; 
-   width: 550px;
+   width: 505px;
+   margin-left: auto;
+   margin-right: auto;
  }
  
  .hit-hover {
@@ -138,12 +136,12 @@ height: 500px;
  }
  
  .hits-list {
-   position: fixed;
-   top: 270px;
-   bottom: 50px;
    overflow: scroll;
    width: 600px;
-   left: 38%;
+   height: 240px;
+   margin-left: auto;
+   margin-right:auto;
+   margin-top: 20px;
  }
  
  .users-hits-list {
@@ -191,7 +189,6 @@ height: 500px;
  #header-nav {
    background: linear-gradient(black, black, black,rgba(125, 195, 241, 0));
    border: none;
-  // height: 70px;
  }
 
  #tabs {
@@ -204,7 +201,7 @@ height: 500px;
  }
  
  .jj-tab-fmt {
-   height: 216px;
+   height: 225px;
    width: 100%;
  }
  
