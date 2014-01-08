@@ -350,6 +350,17 @@ height: 500px;
    color: darkorange;
  }
  
+ .loading {
+   width: 100px;
+   margin-right: auto;
+   margin-left: auto;
+   margin-top: 50px;
+ }
+ 
+ .loading-img {
+   width: 100px;
+ }
+ 
  @media (max-width: 991px) {
    .ui-tabs {
      width: 213px;

@@ -30,11 +30,12 @@ JjList.Views.ParentSearchView = Backbone.View.extend({
     event.preventDefault()
     var that = this;    
     var formData = $(event.target).serializeJSON();
-    
+    $('.hits-list').html(JST['_loading'])
     this.searchResultsView.collection.fetch({
       data: formData,
       
       success: function (collection, response, options) {
+        
         if (collection.length === 0) {
           $('.hits-list').html(
             '<div class=no-results>Zero Listings Found</div>'
