@@ -1,30 +1,34 @@
-<% results.forEach(function (post) { %>
+
+  <% results.forEach(function (post) { %>
     
-  <div class='hit' id="<%= post.id %>" data-id="<%= post.id %>">
+    <div class='hit' id="<%= post.id %>" data-id="<%= post.id %>">
 
-    <div class='image-preview post-preview-single' style="background-image: url(<%= post.get("imageUrls")[0] %>);">
+      <div class='image-preview post-preview-single' style="background-image: url(<%= post.get("imageUrls")[0] %>);">
       
-    </div>
-    <div class="preview">
-      <div class="inline-blk set-w">
-        <%= JST["_previewStar"]({postId: post.id})%>
-        <span class='post-created-at'><%= post.escape("created_at")%></span>
-
-        <span class='title-preview fake-link post-preview-single'>
-          <a href="#" class="detail"><%= post.escape("title").slice(0,50) %></a> 
-        </span>
       </div>
-      <div class="inline-blk set-w">
-        <span class='price-preview post-preview-single'>$<%= post.escape("price") %></span>
+      <div class="preview">
+        <div class="inline-blk set-w">
+          <%= JST["_previewStar"]({postId: post.id})%>
+          <span class='post-created-at'><%= post.escape("created_at")%></span>
 
-        <span class='location-preview post-preview-single'> (<%= post.escape("location") %>) </span>
-        <% if (post.attributes.imageUrls.length !== 0) {%>
-          <span class="haspic">pic</span>
-        <% } %>
+          <span class='title-preview fake-link post-preview-single'>
+            <a href="#" class="detail"><%= post.escape("title").slice(0,50) %></a> 
+          </span>
+        </div>
+        <div class="inline-blk set-w">
+          <span class='price-preview post-preview-single'>$<%= post.escape("price") %></span>
+
+          <span class='location-preview post-preview-single'> (<%= post.escape("location") %>) </span>
+          <% if (post.attributes.imageUrls.length !== 0) {%>
+            <span class="haspic">pic</span>
+          <% } %>
+        </div>
       </div>
     </div>
-  </div>
-<% }) %>
+  <% }) %>
+  
+
+
 
 
 

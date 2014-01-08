@@ -35,7 +35,13 @@ JjList.Views.ParentSearchView = Backbone.View.extend({
       data: formData,
       
       success: function (collection, response, options) {
-        that.searchResultsView.render();        
+        if (collection.length === 0) {
+          $('.hits-list').html(
+            '<div class=no-results>Zero Listings Found</div>'
+          )
+        } else {
+         that.searchResultsView.render();  
+        };     
       },
     });
     
